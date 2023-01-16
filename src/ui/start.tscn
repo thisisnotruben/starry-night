@@ -724,7 +724,7 @@ texture = ExtResource( 6 )
 position = Vector2( -7.76332, -26.1818 )
 scale = Vector2( 0.189349, 0.207792 )
 frames = SubResource( 12 )
-frame = 5
+frame = 22
 playing = true
 
 [node name="asteroids1" type="Sprite" parent="planets/quasar"]
@@ -741,35 +741,35 @@ texture = ExtResource( 16 )
 position = Vector2( 23.858, -43.013 )
 scale = Vector2( 0.350099, 0.344156 )
 frames = SubResource( 10 )
-frame = 38
+frame = 55
 playing = true
 
 [node name="moon" type="AnimatedSprite" parent="planets/quasar"]
 position = Vector2( 21.3965, -25.7662 )
 scale = Vector2( 0.137081, 0.123377 )
 frames = SubResource( 11 )
-frame = 4
+frame = 20
 playing = true
 
 [node name="lava_planet" type="AnimatedSprite" parent="planets"]
 position = Vector2( 523, 483 )
 scale = Vector2( 2.3125, 2.02083 )
 frames = SubResource( 7 )
-frame = 14
+frame = 31
 playing = true
 
 [node name="moon1" type="AnimatedSprite" parent="planets/lava_planet"]
 position = Vector2( 44.973, 27.7114 )
 scale = Vector2( 0.358108, 0.384021 )
 frames = SubResource( 8 )
-frame = 22
+frame = 39
 playing = true
 
 [node name="moon2" type="AnimatedSprite" parent="planets/lava_planet"]
 position = Vector2( 26.8108, -35.1341 )
 scale = Vector2( 0.364864, 0.386598 )
 frames = SubResource( 9 )
-frame = 5
+frame = 22
 playing = true
 
 [node name="station" type="Sprite" parent="planets/lava_planet"]
@@ -781,14 +781,14 @@ texture = ExtResource( 11 )
 position = Vector2( 869, 298 )
 scale = Vector2( 2.5625, 2.3125 )
 frames = SubResource( 5 )
-frame = 33
+frame = 50
 playing = true
 
 [node name="moon" type="AnimatedSprite" parent="planets/forest_planet"]
 position = Vector2( 30.439, -38.0541 )
 scale = Vector2( 0.44309, 0.418919 )
 frames = SubResource( 6 )
-frame = 53
+frame = 10
 playing = true
 
 [node name="nebula1" type="Sprite" parent="planets"]

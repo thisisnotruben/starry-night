@@ -1,0 +1,15 @@
+{
+	"events": [
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "The great galactic contraction is claiming the last of the great human vestige. Coldness sweeps the galaxy as the last supermassive black hole devours everthing!\nYou! A mere ship commodore finds an uncharted interdimensional wormhole that leads to a time of a heart warming universe.\nRepair your ship and save the human race and escape this agonistic universe!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1673892554.json",
+		"name": "intro"
+	}
+}

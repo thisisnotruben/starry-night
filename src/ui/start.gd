@@ -1,10 +1,10 @@
 extends Control
 
-onready var sndPlayer := $snd
-
 
 func _on_start_pressed():
-	sndPlayer.play()
+	$snd.play()
+	$center.hide()
+	add_child(Dialogic.start("intro"))
 
 func _on_exit_pressed():
 	get_tree().quit()

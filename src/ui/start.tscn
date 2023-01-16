@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://src/ui/theme.tres" type="Theme" id=1]
 [ext_resource path="res://asset/img/Space Background.png" type="Texture" id=2]
@@ -24,12 +24,49 @@
 [ext_resource path="res://asset/img/PlanetsFull/Tech/10.png" type="Texture" id=22]
 [ext_resource path="res://src/ui/start.gd" type="Script" id=23]
 [ext_resource path="res://asset/snd/Interface_Bleeps_OGG/Click_04.ogg" type="AudioStream" id=24]
+[ext_resource path="res://asset/img/space_ship/2d/spaceships-atlas.png" type="Texture" id=25]
 
-[node name="Control" type="Control"]
+[sub_resource type="CanvasItemMaterial" id=2]
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.15, 0.85, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 2
+emission_box_extents = Vector3( 512, 300, 0 )
+flag_disable_z = true
+direction = Vector3( 1, -1, 0 )
+spread = 0.0
+flatness = 0.66
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 60.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 10.0
+linear_accel_random = 0.3
+angle = -45.0
+scale = 2.0
+color_ramp = SubResource( 4 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[node name="control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 23 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
@@ -38,11 +75,12 @@ autoplay = true
 [node name="snd" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -144,48 +182,61 @@ flip_h = true
 position = Vector2( 935, 518 )
 texture = ExtResource( 22 )
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="space_ships" type="Particles2D" parent="."]
+material = SubResource( 2 )
+position = Vector2( 512, 300 )
+amount = 40
+lifetime = 6.0
+preprocess = 4.0
+process_material = SubResource( 1 )
+texture = ExtResource( 25 )
+
+[node name="center" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+[node name="panel" type="PanelContainer" parent="center"]
 margin_left = 439.0
 margin_top = 243.0
 margin_right = 585.0
 margin_bottom = 357.0
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+[node name="margin" type="MarginContainer" parent="center/panel"]
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 144.0
 margin_bottom = 112.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+[node name="main" type="VBoxContainer" parent="center/panel/margin"]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 134.0
 margin_bottom = 102.0
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="label" type="Label" parent="center/panel/margin/main"]
 margin_right = 126.0
 margin_bottom = 26.0
 text = "Starry Night"
 align = 1
 valign = 1
 
-[node name="start" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="start" type="Button" parent="center/panel/margin/main"]
 margin_top = 30.0
 margin_right = 126.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
 text = "Start"
 
-[node name="exit" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="exit" type="Button" parent="center/panel/margin/main"]
 margin_top = 64.0
 margin_right = 126.0
 margin_bottom = 94.0
 size_flags_horizontal = 3
 text = "Exit"
 
-[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="center/panel/margin/main/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="center/panel/margin/main/exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/DOS-88 - City Stomper.mp3-0650d196cd1d1a82c71042b4df617bba.mp3str"
+
+[deps]
+
+source_file="res://asset/snd/DOS-88_synthwave_music_library/DOS-88 - City Stomper.mp3"
+dest_files=[ "res://.import/DOS-88 - City Stomper.mp3-0650d196cd1d1a82c71042b4df617bba.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

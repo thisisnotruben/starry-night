@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Crash Landing.mp3-777add1cce84ca27b83a6ab749206da5.mp3str"
+
+[deps]
+
+source_file="res://asset/snd/DOS-88_synthwave_music_library/Crash Landing.mp3"
+dest_files=[ "res://.import/Crash Landing.mp3-777add1cce84ca27b83a6ab749206da5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

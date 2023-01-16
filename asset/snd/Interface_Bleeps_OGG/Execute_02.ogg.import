@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Execute_02.ogg-e42350984296bd522a8a5e7c3fab9a48.oggstr"
+
+[deps]
+
+source_file="res://asset/snd/Interface_Bleeps_OGG/Execute_02.ogg"
+dest_files=[ "res://.import/Execute_02.ogg-e42350984296bd522a8a5e7c3fab9a48.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

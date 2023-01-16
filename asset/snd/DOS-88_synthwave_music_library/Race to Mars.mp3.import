@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Race to Mars.mp3-0482ec5b4d580d4651196a797264c747.mp3str"
+
+[deps]
+
+source_file="res://asset/snd/DOS-88_synthwave_music_library/Race to Mars.mp3"
+dest_files=[ "res://.import/Race to Mars.mp3-0482ec5b4d580d4651196a797264c747.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,13 @@
+.mono/
+.import/
+
+*.translation
+*.png
+*.ttf
+*.zip
+*.rar
+*.pdf
+*.ogg
+*.mp3
+
+export_presets.cfg

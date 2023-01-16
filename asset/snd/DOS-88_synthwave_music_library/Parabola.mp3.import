@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Parabola.mp3-091ca709896a7289476e7abc48b89bed.mp3str"
+
+[deps]
+
+source_file="res://asset/snd/DOS-88_synthwave_music_library/Parabola.mp3"
+dest_files=[ "res://.import/Parabola.mp3-091ca709896a7289476e7abc48b89bed.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

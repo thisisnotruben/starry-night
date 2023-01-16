@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/DOS-88 - Far away.mp3-5642dccf58ba8edfcbc972f7a9399a52.mp3str"
+
+[deps]
+
+source_file="res://asset/snd/DOS-88_synthwave_music_library/DOS-88 - Far away.mp3"
+dest_files=[ "res://.import/DOS-88 - Far away.mp3-5642dccf58ba8edfcbc972f7a9399a52.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

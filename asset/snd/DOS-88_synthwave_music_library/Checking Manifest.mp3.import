@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Checking Manifest.mp3-eb58e708979c49f890ea4d2aa09ef838.mp3str"
+
+[deps]
+
+source_file="res://asset/snd/DOS-88_synthwave_music_library/Checking Manifest.mp3"
+dest_files=[ "res://.import/Checking Manifest.mp3-eb58e708979c49f890ea4d2aa09ef838.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

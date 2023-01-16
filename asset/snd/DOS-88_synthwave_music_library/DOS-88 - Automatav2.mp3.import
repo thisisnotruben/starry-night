@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/DOS-88 - Automatav2.mp3-64b414e43fd474196b3d8f5e2b667e6d.mp3str"
+
+[deps]
+
+source_file="res://asset/snd/DOS-88_synthwave_music_library/DOS-88 - Automatav2.mp3"
+dest_files=[ "res://.import/DOS-88 - Automatav2.mp3-64b414e43fd474196b3d8f5e2b667e6d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

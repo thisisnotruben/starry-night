@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Confirm_01.ogg-66157840278df16c35c6bf4e43906ac8.oggstr"
+
+[deps]
+
+source_file="res://asset/snd/Interface_Bleeps_OGG/Confirm_01.ogg"
+dest_files=[ "res://.import/Confirm_01.ogg-66157840278df16c35c6bf4e43906ac8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

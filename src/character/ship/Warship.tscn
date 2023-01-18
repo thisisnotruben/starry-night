@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://asset/img/space_ship/3d/Warship/Warship.png" type="Texture" id=1]
+[ext_resource path="res://asset/img/space_ship/3d/Warship/Warship.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+
+[node name="Warship" type="Spatial"]
+
+[node name="ship" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, -1, 3.6 )
+material_override = SubResource( 1 )
+mesh = ExtResource( 2 )

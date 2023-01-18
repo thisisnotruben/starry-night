@@ -1,6 +1,6 @@
-[gd_scene load_steps=572 format=2]
+[gd_scene load_steps=573 format=2]
 
-[ext_resource path="res://src/ui/theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/ui/theme/theme.tres" type="Theme" id=1]
 [ext_resource path="res://asset/img/background/Space Background.png" type="Texture" id=2]
 [ext_resource path="res://asset/snd/DOS-88_synthwave_music_library/DOS-88 - Far away.mp3" type="AudioStream" id=3]
 [ext_resource path="res://asset/img/planet/still/Starfield/4.png" type="Texture" id=4]
@@ -558,6 +558,7 @@
 [ext_resource path="res://asset/img/planet/animated/Lava/3/37.png" type="Texture" id=556]
 [ext_resource path="res://asset/img/planet/animated/Lava/3/56.png" type="Texture" id=557]
 [ext_resource path="res://asset/img/planet/still/Starfield/6.png" type="Texture" id=558]
+[ext_resource path="res://src/celestial_transform.gd" type="Script" id=559]
 
 [sub_resource type="Environment" id=13]
 background_mode = 4
@@ -667,7 +668,7 @@ color_ramp = SubResource( 4 )
 anim_offset = 1.0
 anim_offset_random = 1.0
 
-[node name="control" type="Control"]
+[node name="start" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
@@ -691,85 +692,96 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 
 [node name="planets" type="Node2D" parent="."]
 
+[node name="comets" type="Sprite" parent="planets"]
+modulate = Color( 5, 1.25, 1.25, 1 )
+position = Vector2( 790, 99.9997 )
+scale = Vector2( 2.63541, 2.32292 )
+texture = ExtResource( 9 )
+script = ExtResource( 559 )
+characteristic = 2
+
 [node name="station" type="Sprite" parent="planets"]
-position = Vector2( 682, 182 )
+position = Vector2( 600, 121 )
 scale = Vector2( 6.70703, 6.54688 )
 texture = ExtResource( 5 )
-
-[node name="comets" type="Sprite" parent="planets/station"]
-modulate = Color( 5, 1.25, 1.25, 1 )
-position = Vector2( 16.1025, -12.5251 )
-scale = Vector2( 0.392933, 0.354813 )
-texture = ExtResource( 9 )
+script = ExtResource( 559 )
 
 [node name="stars_bottom" type="Sprite" parent="planets"]
 modulate = Color( 1.25, 1.25, 1.25, 1 )
 position = Vector2( 750, 430 )
-scale = Vector2( 2.75, 2.33333 )
+scale = Vector2( 1.02057, 1.02057 )
 texture = ExtResource( 4 )
+script = ExtResource( 559 )
+characteristic = 1
 
 [node name="quasar" type="Sprite" parent="planets"]
 self_modulate = Color( 1.1, 1.1, 1.1, 1 )
-position = Vector2( 246, 301 )
+position = Vector2( 229, 303 )
 scale = Vector2( 5.28125, 4.8125 )
 texture = ExtResource( 6 )
+script = ExtResource( 559 )
 
 [node name="lava_planet" type="AnimatedSprite" parent="planets/quasar"]
-position = Vector2( -7.76332, -26.1818 )
+position = Vector2( -7.76332, -27.8505 )
 scale = Vector2( 0.189349, 0.207792 )
 frames = SubResource( 12 )
-frame = 22
+frame = 32
 playing = true
+script = ExtResource( 559 )
 
 [node name="asteroids1" type="Sprite" parent="planets/quasar"]
 position = Vector2( -0.946747, -35.3247 )
 scale = Vector2( 0.219921, 0.175325 )
 texture = ExtResource( 15 )
+script = ExtResource( 559 )
 
 [node name="asteroids2" type="Sprite" parent="planets/quasar"]
 position = Vector2( 14.2012, -19.5325 )
 scale = Vector2( 0.219921, 0.170996 )
 texture = ExtResource( 16 )
+script = ExtResource( 559 )
 
 [node name="gas_planet" type="AnimatedSprite" parent="planets/quasar"]
-position = Vector2( 23.858, -43.013 )
+position = Vector2( 23.858, -45.4292 )
 scale = Vector2( 0.350099, 0.344156 )
 frames = SubResource( 10 )
-frame = 55
+frame = 5
 playing = true
+script = ExtResource( 559 )
 
 [node name="moon" type="AnimatedSprite" parent="planets/quasar"]
-position = Vector2( 21.3965, -25.7662 )
+position = Vector2( 21.3965, -28.0662 )
 scale = Vector2( 0.137081, 0.123377 )
 frames = SubResource( 11 )
-frame = 20
-playing = true
-
-[node name="lava_planet" type="AnimatedSprite" parent="planets"]
-position = Vector2( 523, 483 )
-scale = Vector2( 2.3125, 2.02083 )
-frames = SubResource( 7 )
 frame = 31
 playing = true
+script = ExtResource( 559 )
+
+[node name="lava_planet" type="AnimatedSprite" parent="planets"]
+position = Vector2( 523, 457.207 )
+scale = Vector2( 2.3125, 2.02083 )
+frames = SubResource( 7 )
+frame = 41
+playing = true
+script = ExtResource( 559 )
 
 [node name="moon1" type="AnimatedSprite" parent="planets/lava_planet"]
 position = Vector2( 44.973, 27.7114 )
 scale = Vector2( 0.358108, 0.384021 )
 frames = SubResource( 8 )
-frame = 39
+frame = 49
 playing = true
 
 [node name="moon2" type="AnimatedSprite" parent="planets/lava_planet"]
 position = Vector2( 26.8108, -35.1341 )
 scale = Vector2( 0.364864, 0.386598 )
 frames = SubResource( 9 )
-frame = 22
+frame = 32
 playing = true
 
 [node name="station" type="Sprite" parent="planets/lava_planet"]
@@ -778,22 +790,23 @@ scale = Vector2( 1.21622, 1.05155 )
 texture = ExtResource( 11 )
 
 [node name="forest_planet" type="AnimatedSprite" parent="planets"]
-position = Vector2( 869, 298 )
+position = Vector2( 869, 272.177 )
 scale = Vector2( 2.5625, 2.3125 )
 frames = SubResource( 5 )
-frame = 50
+frame = 60
 playing = true
+script = ExtResource( 559 )
 
 [node name="moon" type="AnimatedSprite" parent="planets/forest_planet"]
 position = Vector2( 30.439, -38.0541 )
 scale = Vector2( 0.44309, 0.418919 )
 frames = SubResource( 6 )
-frame = 10
+frame = 20
 playing = true
 
 [node name="nebula1" type="Sprite" parent="planets"]
 modulate = Color( 1.1, 1.1, 1.1, 1 )
-position = Vector2( 528, 260 )
+position = Vector2( 645, 281 )
 scale = Vector2( 2.95833, 2.54167 )
 texture = ExtResource( 21 )
 
@@ -809,16 +822,21 @@ position = Vector2( 94, 80 )
 scale = Vector2( 1.83333, 1.8125 )
 texture = ExtResource( 19 )
 flip_h = true
+script = ExtResource( 559 )
+characteristic = 2
 
 [node name="robot_planet" type="Sprite" parent="planets"]
-position = Vector2( 935, 518 )
+position = Vector2( 935, 491.291 )
 texture = ExtResource( 22 )
+script = ExtResource( 559 )
 
 [node name="stars" type="Sprite" parent="planets"]
 modulate = Color( 1.25, 1.25, 1.25, 1 )
 position = Vector2( 324, 469 )
-scale = Vector2( 1.375, 1.33333 )
+scale = Vector2( 1.09588, 1.09588 )
 texture = ExtResource( 558 )
+script = ExtResource( 559 )
+characteristic = 1
 
 [node name="space_ships" type="Particles2D" parent="."]
 material = SubResource( 2 )
@@ -842,21 +860,21 @@ __meta__ = {
 
 [node name="panel" type="PanelContainer" parent="center"]
 margin_left = 439.0
-margin_top = 243.0
+margin_top = 226.0
 margin_right = 585.0
-margin_bottom = 357.0
+margin_bottom = 374.0
 
 [node name="margin" type="MarginContainer" parent="center/panel"]
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 144.0
-margin_bottom = 112.0
+margin_bottom = 146.0
 
 [node name="main" type="VBoxContainer" parent="center/panel/margin"]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 134.0
-margin_bottom = 102.0
+margin_bottom = 136.0
 
 [node name="label" type="Label" parent="center/panel/margin/main"]
 margin_right = 126.0
@@ -872,12 +890,20 @@ margin_bottom = 60.0
 size_flags_horizontal = 3
 text = "Start"
 
-[node name="exit" type="Button" parent="center/panel/margin/main"]
+[node name="about" type="Button" parent="center/panel/margin/main"]
 margin_top = 64.0
 margin_right = 126.0
 margin_bottom = 94.0
 size_flags_horizontal = 3
+text = "About"
+
+[node name="exit" type="Button" parent="center/panel/margin/main"]
+margin_top = 98.0
+margin_right = 126.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
 text = "Exit"
 
 [connection signal="pressed" from="center/panel/margin/main/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="center/panel/margin/main/about" to="." method="_on_about_pressed"]
 [connection signal="pressed" from="center/panel/margin/main/exit" to="." method="_on_exit_pressed"]

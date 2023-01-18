@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://asset/img/map/Content/Environment/GroundPatch_19.fbx" type="PackedScene" id=1]
+
+[node name="GroundPatch_19" instance=ExtResource( 1 )]

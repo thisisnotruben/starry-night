@@ -3,11 +3,15 @@
 
 *.translation
 *.png
+*.gif
 *.ttf
 *.zip
+*.vox
+*.fbx
+*.ACT
 *.rar
 *.pdf
-*.ogg
 *.mp3
+*.ogg
 
 export_presets.cfg

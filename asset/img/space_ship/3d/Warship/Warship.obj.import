@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Warship.obj-2e7c170f727d1441ec593b2f2cb99c9e.mesh"
+
+[deps]
+
+files=[ "res://.import/Warship.obj-2e7c170f727d1441ec593b2f2cb99c9e.mesh" ]
+
+source_file="res://asset/img/space_ship/3d/Warship/Warship.obj"
+dest_files=[ "res://.import/Warship.obj-2e7c170f727d1441ec593b2f2cb99c9e.mesh", "res://.import/Warship.obj-2e7c170f727d1441ec593b2f2cb99c9e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

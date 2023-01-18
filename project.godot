@@ -98,7 +98,7 @@ enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg" )
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
-theme/custom="res://src/ui/theme.tres"
+theme/custom="res://src/ui/theme/theme.tres"
 
 [importer_defaults]
 

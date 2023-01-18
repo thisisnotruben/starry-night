@@ -1,5 +1,6 @@
 .mono/
 .import/
+meta/
 
 *.translation
 *.png
@@ -15,3 +16,4 @@
 *.ogg
 
 export_presets.cfg
+!scene_1.png

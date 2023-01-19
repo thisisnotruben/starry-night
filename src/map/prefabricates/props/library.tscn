@@ -1,0 +1,175 @@
+[gd_scene load_steps=57 format=2]
+
+[ext_resource path="res://src/map/prefabricates/props/SmallAntenna.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/map/prefabricates/props/SatelliteDish.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/map/prefabricates/props/Prop_10.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/map/prefabricates/props/Prop_1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/map/prefabricates/props/SolarPanel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/map/prefabricates/props/SatelliteDish_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/map/prefabricates/props/Wheel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/map/prefabricates/props/LadderBar_4.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/map/prefabricates/props/Prop_6.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/map/prefabricates/props/Prop.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/map/prefabricates/props/Prop_13.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/map/prefabricates/props/LadderBar_3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/map/prefabricates/props/Prop_2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/map/prefabricates/props/Prop_9.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/map/prefabricates/props/Prop_11.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/map/prefabricates/props/MudPath_3.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/map/prefabricates/props/Neon.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/map/prefabricates/props/Prop_5.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/map/prefabricates/props/SolarPanel_3.tscn" type="PackedScene" id=19]
+[ext_resource path="res://src/map/prefabricates/props/Stairs.tscn" type="PackedScene" id=20]
+[ext_resource path="res://src/map/prefabricates/props/MudPath_2.tscn" type="PackedScene" id=21]
+[ext_resource path="res://src/map/prefabricates/props/Prop_7.tscn" type="PackedScene" id=22]
+[ext_resource path="res://src/map/prefabricates/props/SmallAntenna_1.tscn" type="PackedScene" id=23]
+[ext_resource path="res://src/map/prefabricates/props/Prop_3.tscn" type="PackedScene" id=24]
+[ext_resource path="res://src/map/prefabricates/props/Path.tscn" type="PackedScene" id=25]
+[ext_resource path="res://src/map/prefabricates/props/Prop_14.tscn" type="PackedScene" id=26]
+[ext_resource path="res://src/map/prefabricates/props/SolarPanel_4.tscn" type="PackedScene" id=27]
+[ext_resource path="res://src/map/prefabricates/props/MudPath.tscn" type="PackedScene" id=28]
+[ext_resource path="res://src/map/prefabricates/props/Prop_12.tscn" type="PackedScene" id=29]
+[ext_resource path="res://src/map/prefabricates/props/LadderBar_2.tscn" type="PackedScene" id=30]
+[ext_resource path="res://src/map/prefabricates/props/Prop_4.tscn" type="PackedScene" id=31]
+[ext_resource path="res://src/map/prefabricates/props/SolarPanel_1.tscn" type="PackedScene" id=32]
+[ext_resource path="res://src/map/prefabricates/props/Prop_8.tscn" type="PackedScene" id=33]
+[ext_resource path="res://src/map/prefabricates/props/Prop_15.tscn" type="PackedScene" id=34]
+[ext_resource path="res://src/map/prefabricates/props/Vent.tscn" type="PackedScene" id=35]
+[ext_resource path="res://src/map/prefabricates/props/MudPath_1.tscn" type="PackedScene" id=36]
+[ext_resource path="res://src/map/prefabricates/props/SolarPanel_2.tscn" type="PackedScene" id=37]
+[ext_resource path="res://src/map/prefabricates/props/LadderBar_1.tscn" type="PackedScene" id=38]
+[ext_resource path="res://src/map/prefabricates/props/Door_1.tscn" type="PackedScene" id=39]
+[ext_resource path="res://src/map/prefabricates/props/Glass_1.tscn" type="PackedScene" id=40]
+[ext_resource path="res://src/map/prefabricates/props/Glass_3.tscn" type="PackedScene" id=41]
+[ext_resource path="res://src/map/prefabricates/props/Glass.tscn" type="PackedScene" id=42]
+[ext_resource path="res://src/map/prefabricates/props/Glass_4.tscn" type="PackedScene" id=43]
+[ext_resource path="res://src/map/prefabricates/props/Ladder.tscn" type="PackedScene" id=44]
+[ext_resource path="res://src/map/prefabricates/props/LadderBar.tscn" type="PackedScene" id=45]
+[ext_resource path="res://src/map/prefabricates/props/Antenna.tscn" type="PackedScene" id=46]
+[ext_resource path="res://src/map/prefabricates/props/Chair.tscn" type="PackedScene" id=47]
+[ext_resource path="res://src/map/prefabricates/props/Chassis.tscn" type="PackedScene" id=48]
+[ext_resource path="res://src/map/prefabricates/props/Chassis_1.tscn" type="PackedScene" id=49]
+[ext_resource path="res://src/map/prefabricates/props/BuildingBlock_1.tscn" type="PackedScene" id=50]
+[ext_resource path="res://src/map/prefabricates/props/BuildingBlock.tscn" type="PackedScene" id=51]
+[ext_resource path="res://src/map/prefabricates/props/BuildingBlock_2.tscn" type="PackedScene" id=52]
+[ext_resource path="res://src/map/prefabricates/props/Door.tscn" type="PackedScene" id=53]
+[ext_resource path="res://src/map/prefabricates/props/GlassBlock.tscn" type="PackedScene" id=54]
+[ext_resource path="res://src/map/prefabricates/props/Glass_2.tscn" type="PackedScene" id=55]
+[ext_resource path="res://src/map/prefabricates/props/library.gd" type="Script" id=56]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 56 )
+
+[node name="Antenna" parent="." instance=ExtResource( 46 )]
+
+[node name="BuildingBlock" parent="." instance=ExtResource( 51 )]
+
+[node name="BuildingBlock_1" parent="." instance=ExtResource( 50 )]
+
+[node name="BuildingBlock_2" parent="." instance=ExtResource( 52 )]
+
+[node name="Chair" parent="." instance=ExtResource( 47 )]
+
+[node name="Chassis" parent="." instance=ExtResource( 48 )]
+
+[node name="Chassis_1" parent="." instance=ExtResource( 49 )]
+
+[node name="Door" parent="." instance=ExtResource( 53 )]
+
+[node name="Door_1" parent="." instance=ExtResource( 39 )]
+
+[node name="Glass" parent="." instance=ExtResource( 42 )]
+
+[node name="GlassBlock" parent="." instance=ExtResource( 54 )]
+
+[node name="Glass_1" parent="." instance=ExtResource( 40 )]
+
+[node name="Glass_2" parent="." instance=ExtResource( 55 )]
+
+[node name="Glass_3" parent="." instance=ExtResource( 41 )]
+
+[node name="Glass_4" parent="." instance=ExtResource( 43 )]
+
+[node name="Ladder" parent="." instance=ExtResource( 44 )]
+
+[node name="LadderBar" parent="." instance=ExtResource( 45 )]
+
+[node name="LadderBar_1" parent="." instance=ExtResource( 38 )]
+
+[node name="LadderBar_2" parent="." instance=ExtResource( 30 )]
+
+[node name="LadderBar_3" parent="." instance=ExtResource( 12 )]
+
+[node name="LadderBar_4" parent="." instance=ExtResource( 8 )]
+
+[node name="MudPath" parent="." instance=ExtResource( 28 )]
+
+[node name="MudPath_1" parent="." instance=ExtResource( 36 )]
+
+[node name="MudPath_2" parent="." instance=ExtResource( 21 )]
+
+[node name="MudPath_3" parent="." instance=ExtResource( 16 )]
+
+[node name="Neon" parent="." instance=ExtResource( 17 )]
+
+[node name="Path" parent="." instance=ExtResource( 25 )]
+
+[node name="Prop" parent="." instance=ExtResource( 10 )]
+
+[node name="Prop_1" parent="." instance=ExtResource( 4 )]
+
+[node name="Prop_2" parent="." instance=ExtResource( 13 )]
+
+[node name="Prop_3" parent="." instance=ExtResource( 24 )]
+
+[node name="Prop_4" parent="." instance=ExtResource( 31 )]
+
+[node name="Prop_5" parent="." instance=ExtResource( 18 )]
+
+[node name="Prop_6" parent="." instance=ExtResource( 9 )]
+
+[node name="Prop_7" parent="." instance=ExtResource( 22 )]
+
+[node name="Prop_8" parent="." instance=ExtResource( 33 )]
+
+[node name="Prop_9" parent="." instance=ExtResource( 14 )]
+
+[node name="Prop_10" parent="." instance=ExtResource( 3 )]
+
+[node name="Prop_11" parent="." instance=ExtResource( 15 )]
+
+[node name="Prop_12" parent="." instance=ExtResource( 29 )]
+
+[node name="Prop_13" parent="." instance=ExtResource( 11 )]
+
+[node name="Prop_14" parent="." instance=ExtResource( 26 )]
+
+[node name="Prop_15" parent="." instance=ExtResource( 34 )]
+
+[node name="SatelliteDish" parent="." instance=ExtResource( 2 )]
+
+[node name="SatelliteDish_1" parent="." instance=ExtResource( 6 )]
+
+[node name="SmallAntenna" parent="." instance=ExtResource( 1 )]
+
+[node name="SmallAntenna_1" parent="." instance=ExtResource( 23 )]
+
+[node name="SolarPanel" parent="." instance=ExtResource( 5 )]
+
+[node name="SolarPanel_1" parent="." instance=ExtResource( 32 )]
+
+[node name="SolarPanel_2" parent="." instance=ExtResource( 37 )]
+
+[node name="SolarPanel_3" parent="." instance=ExtResource( 19 )]
+
+[node name="SolarPanel_4" parent="." instance=ExtResource( 27 )]
+
+[node name="Stairs" parent="." instance=ExtResource( 20 )]
+
+[node name="Vent" parent="." instance=ExtResource( 35 )]
+
+[node name="Wheel" parent="." instance=ExtResource( 7 )]
+
+[editable path="Antenna"]
+[editable path="Glass"]
+[editable path="Prop_14"]

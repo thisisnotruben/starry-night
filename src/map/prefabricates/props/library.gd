@@ -10,7 +10,7 @@ func _ready():
 			mesh.owner = self
 		else:
 			printerr(child, "-- didn't find mesh")
-	
+
 	var packed_scene = PackedScene.new()
 	packed_scene.pack(self)
 	ResourceSaver.save(filename.get_basename() + "_mesh.tscn", packed_scene)

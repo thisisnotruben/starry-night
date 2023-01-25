@@ -1,4 +1,4 @@
-[gd_scene load_steps=573 format=2]
+[gd_scene load_steps=574 format=2]
 
 [ext_resource path="res://src/ui/theme/theme.tres" type="Theme" id=1]
 [ext_resource path="res://asset/img/background/Space Background.png" type="Texture" id=2]
@@ -22,7 +22,7 @@
 [ext_resource path="res://asset/img/planet/still/Nebulae/4.png" type="Texture" id=20]
 [ext_resource path="res://asset/img/planet/still/Nebulae/6.png" type="Texture" id=21]
 [ext_resource path="res://asset/img/planet/still/Tech/10.png" type="Texture" id=22]
-[ext_resource path="res://src/ui/start.gd" type="Script" id=23]
+[ext_resource path="res://src/ui/start/start.gd" type="Script" id=23]
 [ext_resource path="res://asset/snd/Interface_Bleeps_OGG/Click_04.ogg" type="AudioStream" id=24]
 [ext_resource path="res://asset/img/space_ship/2d/spaceships-atlas.png" type="Texture" id=25]
 [ext_resource path="res://asset/img/planet/animated/Forest_or_Jungle_or_Swamp/Clouds/1/31.png" type="Texture" id=26]
@@ -559,6 +559,7 @@
 [ext_resource path="res://asset/img/planet/animated/Lava/3/56.png" type="Texture" id=557]
 [ext_resource path="res://asset/img/planet/still/Starfield/6.png" type="Texture" id=558]
 [ext_resource path="res://src/celestial_transform.gd" type="Script" id=559]
+[ext_resource path="res://src/ui/about/about.tscn" type="PackedScene" id=560]
 
 [sub_resource type="Environment" id=13]
 background_mode = 4
@@ -730,7 +731,7 @@ script = ExtResource( 559 )
 position = Vector2( -7.76332, -27.8505 )
 scale = Vector2( 0.189349, 0.207792 )
 frames = SubResource( 12 )
-frame = 55
+frame = 48
 playing = true
 script = ExtResource( 559 )
 
@@ -750,7 +751,7 @@ script = ExtResource( 559 )
 position = Vector2( 23.858, -45.4292 )
 scale = Vector2( 0.350099, 0.344156 )
 frames = SubResource( 10 )
-frame = 28
+frame = 21
 playing = true
 script = ExtResource( 559 )
 
@@ -758,7 +759,7 @@ script = ExtResource( 559 )
 position = Vector2( 21.3965, -28.0662 )
 scale = Vector2( 0.137081, 0.123377 )
 frames = SubResource( 11 )
-frame = 54
+frame = 47
 playing = true
 script = ExtResource( 559 )
 
@@ -766,7 +767,7 @@ script = ExtResource( 559 )
 position = Vector2( 523, 457.207 )
 scale = Vector2( 2.3125, 2.02083 )
 frames = SubResource( 7 )
-frame = 4
+frame = 57
 playing = true
 script = ExtResource( 559 )
 
@@ -774,14 +775,14 @@ script = ExtResource( 559 )
 position = Vector2( 44.973, 27.7114 )
 scale = Vector2( 0.358108, 0.384021 )
 frames = SubResource( 8 )
-frame = 12
+frame = 5
 playing = true
 
 [node name="moon2" type="AnimatedSprite" parent="planets/lava_planet"]
 position = Vector2( 26.8108, -35.1341 )
 scale = Vector2( 0.364864, 0.386598 )
 frames = SubResource( 9 )
-frame = 55
+frame = 48
 playing = true
 
 [node name="station" type="Sprite" parent="planets/lava_planet"]
@@ -793,7 +794,7 @@ texture = ExtResource( 11 )
 position = Vector2( 869, 272.177 )
 scale = Vector2( 2.5625, 2.3125 )
 frames = SubResource( 5 )
-frame = 83
+frame = 76
 playing = true
 script = ExtResource( 559 )
 
@@ -801,7 +802,7 @@ script = ExtResource( 559 )
 position = Vector2( 30.439, -38.0541 )
 scale = Vector2( 0.44309, 0.418919 )
 frames = SubResource( 6 )
-frame = 43
+frame = 36
 playing = true
 
 [node name="nebula1" type="Sprite" parent="planets"]
@@ -850,7 +851,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="center" type="CenterContainer" parent="."]
+[node name="main" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -858,52 +859,56 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="panel" type="PanelContainer" parent="center"]
+[node name="panel" type="PanelContainer" parent="main"]
 margin_left = 439.0
 margin_top = 226.0
 margin_right = 585.0
 margin_bottom = 374.0
 
-[node name="margin" type="MarginContainer" parent="center/panel"]
+[node name="margin" type="MarginContainer" parent="main/panel"]
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 144.0
 margin_bottom = 146.0
 
-[node name="main" type="VBoxContainer" parent="center/panel/margin"]
+[node name="main" type="VBoxContainer" parent="main/panel/margin"]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 134.0
 margin_bottom = 136.0
 
-[node name="label" type="Label" parent="center/panel/margin/main"]
+[node name="label" type="Label" parent="main/panel/margin/main"]
 margin_right = 126.0
 margin_bottom = 26.0
 text = "Starry Night"
 align = 1
 valign = 1
 
-[node name="start" type="Button" parent="center/panel/margin/main"]
+[node name="start" type="Button" parent="main/panel/margin/main"]
 margin_top = 30.0
 margin_right = 126.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
 text = "Start"
 
-[node name="about" type="Button" parent="center/panel/margin/main"]
+[node name="about" type="Button" parent="main/panel/margin/main"]
 margin_top = 64.0
 margin_right = 126.0
 margin_bottom = 94.0
 size_flags_horizontal = 3
 text = "About"
 
-[node name="exit" type="Button" parent="center/panel/margin/main"]
+[node name="exit" type="Button" parent="main/panel/margin/main"]
 margin_top = 98.0
 margin_right = 126.0
 margin_bottom = 128.0
 size_flags_horizontal = 3
 text = "Exit"
 
-[connection signal="pressed" from="center/panel/margin/main/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="center/panel/margin/main/about" to="." method="_on_about_pressed"]
-[connection signal="pressed" from="center/panel/margin/main/exit" to="." method="_on_exit_pressed"]
+[node name="about" parent="." instance=ExtResource( 560 )]
+visible = false
+
+[connection signal="pressed" from="main/panel/margin/main/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="main/panel/margin/main/about" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="main/panel/margin/main/exit" to="." method="_on_exit_pressed"]
+[connection signal="visibility_changed" from="about" to="." method="_on_about_visibility_changed"]

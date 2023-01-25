@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/ui/about/about.gd" type="Script" id=1]
+[ext_resource path="res://asset/snd/Interface_Bleeps_OGG/Click_04.ogg" type="AudioStream" id=2]
+
+[node name="about" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+rect_pivot_offset = Vector2( -202, 62 )
+script = ExtResource( 1 )
+
+[node name="snd" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="center" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="panel" type="PanelContainer" parent="center"]
+margin_left = 458.0
+margin_top = 216.0
+margin_right = 566.0
+margin_bottom = 384.0
+
+[node name="margin" type="MarginContainer" parent="center/panel"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 106.0
+margin_bottom = 166.0
+
+[node name="main" type="VBoxContainer" parent="center/panel/margin"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 96.0
+margin_bottom = 156.0
+
+[node name="label" type="Label" parent="center/panel/margin/main"]
+margin_right = 88.0
+margin_bottom = 26.0
+text = "Licenses"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="center/panel/margin/main"]
+margin_top = 30.0
+margin_right = 88.0
+margin_bottom = 114.0
+text = "Images:
+Audio:
+Models:"
+
+[node name="back" type="Button" parent="center/panel/margin/main"]
+margin_top = 118.0
+margin_right = 88.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+text = "Back"
+
+[connection signal="pressed" from="center/panel/margin/main/back" to="." method="_on_back_pressed"]

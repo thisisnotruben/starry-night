@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/ui/game/game.gd" type="Script" id=1]
+[ext_resource path="res://src/ui/about/about.tscn" type="PackedScene" id=2]
+[ext_resource path="res://asset/snd/Interface_Bleeps_OGG/Click_04.ogg" type="AudioStream" id=3]
+
+[node name="game" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ -133.0 ]
+}
+
+[node name="snd" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="colorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.164706, 0.164706, 0.164706, 0.498039 )
+
+[node name="main" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="panel" type="PanelContainer" parent="main"]
+margin_left = 431.0
+margin_top = 209.0
+margin_right = 593.0
+margin_bottom = 391.0
+
+[node name="margin" type="MarginContainer" parent="main/panel"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 160.0
+margin_bottom = 180.0
+
+[node name="main" type="VBoxContainer" parent="main/panel/margin"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 150.0
+margin_bottom = 170.0
+
+[node name="label" type="Label" parent="main/panel/margin/main"]
+margin_right = 142.0
+margin_bottom = 26.0
+text = "Starry Night"
+align = 1
+valign = 1
+
+[node name="resume_game" type="Button" parent="main/panel/margin/main"]
+margin_top = 30.0
+margin_right = 142.0
+margin_bottom = 60.0
+text = "Resume Game"
+
+[node name="start_menu" type="Button" parent="main/panel/margin/main"]
+margin_top = 64.0
+margin_right = 142.0
+margin_bottom = 94.0
+size_flags_horizontal = 3
+text = "Start Menu"
+
+[node name="about" type="Button" parent="main/panel/margin/main"]
+margin_top = 98.0
+margin_right = 142.0
+margin_bottom = 128.0
+text = "About"
+
+[node name="exit" type="Button" parent="main/panel/margin/main"]
+margin_top = 132.0
+margin_right = 142.0
+margin_bottom = 162.0
+size_flags_horizontal = 3
+text = "Exit"
+
+[node name="confirm_start_menu" type="ConfirmationDialog" parent="main/panel/margin"]
+unique_name_in_owner = true
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 208.0
+margin_bottom = 170.0
+window_title = ""
+
+[node name="about" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[connection signal="visibility_changed" from="." to="." method="_on_game_visibility_changed"]
+[connection signal="pressed" from="main/panel/margin/main/resume_game" to="." method="_on_resume_game_pressed"]
+[connection signal="pressed" from="main/panel/margin/main/start_menu" to="." method="_on_start_menu_pressed"]
+[connection signal="pressed" from="main/panel/margin/main/about" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="main/panel/margin/main/exit" to="." method="_on_exit_pressed"]
+[connection signal="confirmed" from="main/panel/margin/confirm_start_menu" to="." method="_on_confirm_start_menu_confirmed"]
+[connection signal="visibility_changed" from="about" to="." method="_on_about_visibility_changed"]

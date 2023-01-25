@@ -3,6 +3,7 @@
 [resource]
 resource_name = "mixamo.com"
 length = 6.0
+loop = true
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Skeleton:LeftLeg")
 tracks/0/interp = 1

@@ -731,7 +731,7 @@ script = ExtResource( 559 )
 position = Vector2( -7.76332, -27.8505 )
 scale = Vector2( 0.189349, 0.207792 )
 frames = SubResource( 12 )
-frame = 48
+frame = 6
 playing = true
 script = ExtResource( 559 )
 
@@ -751,7 +751,7 @@ script = ExtResource( 559 )
 position = Vector2( 23.858, -45.4292 )
 scale = Vector2( 0.350099, 0.344156 )
 frames = SubResource( 10 )
-frame = 21
+frame = 39
 playing = true
 script = ExtResource( 559 )
 
@@ -759,7 +759,7 @@ script = ExtResource( 559 )
 position = Vector2( 21.3965, -28.0662 )
 scale = Vector2( 0.137081, 0.123377 )
 frames = SubResource( 11 )
-frame = 47
+frame = 5
 playing = true
 script = ExtResource( 559 )
 
@@ -767,7 +767,7 @@ script = ExtResource( 559 )
 position = Vector2( 523, 457.207 )
 scale = Vector2( 2.3125, 2.02083 )
 frames = SubResource( 7 )
-frame = 57
+frame = 15
 playing = true
 script = ExtResource( 559 )
 
@@ -775,14 +775,14 @@ script = ExtResource( 559 )
 position = Vector2( 44.973, 27.7114 )
 scale = Vector2( 0.358108, 0.384021 )
 frames = SubResource( 8 )
-frame = 5
+frame = 23
 playing = true
 
 [node name="moon2" type="AnimatedSprite" parent="planets/lava_planet"]
 position = Vector2( 26.8108, -35.1341 )
 scale = Vector2( 0.364864, 0.386598 )
 frames = SubResource( 9 )
-frame = 48
+frame = 6
 playing = true
 
 [node name="station" type="Sprite" parent="planets/lava_planet"]
@@ -794,7 +794,7 @@ texture = ExtResource( 11 )
 position = Vector2( 869, 272.177 )
 scale = Vector2( 2.5625, 2.3125 )
 frames = SubResource( 5 )
-frame = 76
+frame = 94
 playing = true
 script = ExtResource( 559 )
 
@@ -802,7 +802,7 @@ script = ExtResource( 559 )
 position = Vector2( 30.439, -38.0541 )
 scale = Vector2( 0.44309, 0.418919 )
 frames = SubResource( 6 )
-frame = 36
+frame = 54
 playing = true
 
 [node name="nebula1" type="Sprite" parent="planets"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.619608, 0.0196078, 0.929412, 0 )
+emission_enabled = true
+emission = Color( 0.619608, 0.0196078, 1, 1 )
+emission_energy = 1.25
+emission_operator = 0
+emission_on_uv2 = false
+refraction_enabled = true
+refraction_scale = 0.45
+refraction_texture_channel = 2
+
+[sub_resource type="SphereShape" id=3]
+radius = 15.0
+
+[node name="blackhole" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0131912, -0.0503674, 0.0241451 )
+
+[node name="CSGSphere2" type="CSGSphere" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0808258, -9.53674e-07, 0.00226212 )
+radius = 10.0
+material = SubResource( 2 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 3 )

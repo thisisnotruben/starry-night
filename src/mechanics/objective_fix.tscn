@@ -24,12 +24,30 @@ one_shot = true
 [node name="cooldown_timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="tween_fix" type="Tween" parent="."]
+
 [node name="tween" type="Tween" parent="."]
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.145, 0 )
 light_color = Color( 1, 1, 0, 1 )
 omni_range = 1.5
+
+[node name="fix" type="Label3D" parent="OmniLight"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.585388, 0 )
+visible = false
+text = "Fixing..."
+
+[node name="timing" type="Label3D" parent="OmniLight/fix"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.194931, 0 )
+text = "0"
+
+[node name="text" type="Label3D" parent="OmniLight"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1467, 0 )
+text = "Cooling Down!"
+
+[node name="timing" type="Label3D" parent="OmniLight"]
+text = "0"
 
 [node name="CSGCylinder" type="CSGCylinder" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0583317, 0 )

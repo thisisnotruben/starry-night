@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
 [sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 0.619608, 0.0196078, 0.929412, 0 )
+vertex_color_use_as_albedo = true
+albedo_color = Color( 0, 0, 0, 1 )
 emission_enabled = true
-emission = Color( 0.619608, 0.0196078, 1, 1 )
+emission = Color( 0, 0, 0, 1 )
 emission_energy = 1.25
 emission_operator = 0
 emission_on_uv2 = false
@@ -26,3 +27,6 @@ material = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 3 )
+
+[node name="CSGTorus" type="CSGTorus" parent="."]
+transform = Transform( 4.96774, 0, 0, 0, 4.25733, 0, 0, 0, 4.59815, 0, -9.08971e-07, 0 )

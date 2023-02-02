@@ -102,7 +102,12 @@ _global_script_classes=[ {
 "base": "KinematicBody",
 "class": "Player",
 "language": "GDScript",
-"path": "res://src/entity/player/player.gd"
+"path": "res://src/entity/character/player/player.gd"
+}, {
+"base": "Node",
+"class": "Ship",
+"language": "GDScript",
+"path": "res://src/entity/ship/ship_movement.gd"
 }, {
 "base": "Node",
 "class": "StateType",
@@ -144,6 +149,7 @@ _global_script_class_icons={
 "Move": "",
 "Orchestrator": "",
 "Player": "",
+"Ship": "",
 "StateType": "",
 "Tool": "",
 "Victory": "",

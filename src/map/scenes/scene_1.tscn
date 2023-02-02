@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://src/map/prefabricates/building/Building_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/map/prefabricates/building/Building_5.tscn" type="PackedScene" id=2]
@@ -11,15 +11,21 @@
 [ext_resource path="res://src/map/prefabricates/props/props_meshLibrary.tres" type="MeshLibrary" id=9]
 [ext_resource path="res://src/map/prefabricates/props/Path.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/map/prefabricates/props/SolarPanel_1.tscn" type="PackedScene" id=11]
-[ext_resource path="res://src/entity/player/player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/entity/character/player/player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://asset/img/background/scene_1_background.png" type="Texture" id=13]
 [ext_resource path="res://src/mechanics/objective_fix.tscn" type="PackedScene" id=14]
 [ext_resource path="res://asset/snd/DOS-88_synthwave_music_library/DOS-88 - Far away.mp3" type="AudioStream" id=15]
 [ext_resource path="res://src/ui/game/game.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/entity/blackhole/blackhole.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/entity/ship/CamoStellarJet.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/map/scenes/scene_1.gd" type="Script" id=19]
 [ext_resource path="res://src/mechanics/orchestrator.tscn" type="PackedScene" id=20]
 [ext_resource path="res://src/ui/hud/hud.tscn" type="PackedScene" id=21]
+[ext_resource path="res://src/entity/ship/RedFighter.tscn" type="PackedScene" id=22]
+[ext_resource path="res://src/entity/ship/GalactixRacer.tscn" type="PackedScene" id=23]
+[ext_resource path="res://src/entity/ship/UltravioletIntruder.tscn" type="PackedScene" id=24]
+[ext_resource path="res://src/entity/ship/MeteorSlicer.tscn" type="PackedScene" id=25]
+[ext_resource path="res://src/entity/ship/Warship.tscn" type="PackedScene" id=26]
 
 [sub_resource type="PanoramaSky" id=2]
 radiance_size = 0
@@ -51,21 +57,57 @@ adjustment_brightness = 2.18
 
 [sub_resource type="Curve3D" id=3]
 _data = {
-"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0.0887871, -0.0437374, 0.0925446, 0, 0, 0, 0, 0, 0, 50.0322, -4.37287, -50.6955 ),
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0.0887871, -0.0437374, 0.0925446, 0, 0, 0, 0, 0, 0, -42.0794, -4.37287, 47.5803 ),
 "tilts": PoolRealArray( 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=4]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 1.66012, -15.0343, -6.90396, 0, 0, 0, 0, 0, 0, 22.9397, -15.0343, -8.07685, 0, 0, 0, 0, 0, 0, 50.9216, -15.0343, -7.57419, 0, 0, 0, 0, 0, 0, 69.3527, -15.0343, -7.07151, 0, 0, 0, 0, 0, 0, 92.8105, -15.0343, -9.24974 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=5]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -10.0688, -15.0343, -14.2764, 0, 0, 0, 0, 0, 0, 7.69213, -15.0343, -15.1142, 0, 0, 0, 0, 0, 0, 34.5011, -15.0343, -14.9466, 0, 0, 0, 0, 0, 0, 59.802, -15.0343, -13.6062, 0, 0, 0, 0, 0, 0, 85.6056, -15.0343, -17.2924, 0, 0, 0, 0, 0, 0, 102.361, -15.0343, -18.1302 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=6]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -13.0848, -15.0343, 4.32228, 0, 0, 0, 0, 0, 0, 15.7348, -15.0343, 3.98717, 0, 0, 0, 0, 0, 0, 32.3229, -15.0343, 4.15473, 0, 0, 0, 0, 0, 0, 52.4296, -15.0343, 3.81962, 0, 0, 0, 0, 0, 0, 68.6825, -15.0343, 3.48451, 0, 0, 0, 0, 0, 0, 88.9568, -15.0343, 3.81962 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=7]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 5.17879, -15.0343, -39.7449, 0, 0, 0, 0, 0, 0, 32.4904, -15.0343, -41.9231, 0, 0, 0, 0, 0, 0, 60.9749, -15.0343, -40.9178, 0, 0, 0, 0, 0, 0, 85.103, -15.0343, -43.096, 0, 0, 0, 0, 0, 0, 105.21, -15.0343, -43.096 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=8]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -2.8639, -15.0343, -54.3223, 0, 0, 0, 0, 0, 0, 23.4424, -15.0343, -54.825, 0, 0, 0, 0, 0, 0, 52.9322, -15.0343, -53.1494, 0, 0, 0, 0, 0, 0, 78.5683, -15.0343, -54.3223, 0, 0, 0, 0, 0, 0, 109.231, -15.0343, -56.1654 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=9]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -7.05279, -15.0343, -49.4632, 0, 0, 0, 0, 0, 0, 25.4531, -15.0343, -49.1281, 0, 0, 0, 0, 0, 0, 61.9802, -15.0343, -49.6307, 0, 0, 0, 0, 0, 0, 88.6216, -15.0343, -47.7876, 0, 0, 0, 0, 0, 0, 112.415, -15.0343, -49.6307 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0 )
 }
 
 [node name="scene_1" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0470695, 0.0342503, 0.00810432 )
 script = ExtResource( 19 )
 
-[node name="orchestrator" parent="." instance=ExtResource( 20 )]
+[node name="worldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
 
-[node name="worldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
+[node name="orchestrator" parent="." instance=ExtResource( 20 )]
 
 [node name="gui" type="CanvasLayer" parent="."]
 
@@ -73,6 +115,9 @@ environment = SubResource( 1 )
 
 [node name="game" parent="gui" instance=ExtResource( 16 )]
 visible = false
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+light_energy = 0.328
 
 [node name="platform" type="Spatial" parent="."]
 __meta__ = {
@@ -262,13 +307,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015, 0.1, 2.4 )
 [node name="player" parent="platform" instance=ExtResource( 12 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.0768358, 0 )
 
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-light_energy = 0.328
-
 [node name="blackhole" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 15, 50 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1986, 7.02325, -47.1035 )
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -284,3 +325,91 @@ transform = Transform( 1, -1.01863e-10, -3.72529e-09, -6.25732e-10, 1, 9.31323e-
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="ships" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 2.5475, 24.8324 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="path1" type="Path" parent="ships"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.15668, -0.151966 )
+curve = SubResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PathFollow" type="PathFollow" parent="ships/path1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.66012, 4.9657, -6.90396 )
+v_offset = 20.0
+
+[node name="CamoStellarJet" parent="ships/path1/PathFollow" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+
+[node name="path2" type="Path" parent="ships"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.02134, 0 )
+curve = SubResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PathFollow" type="PathFollow" parent="ships/path2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0688, 4.9657, -14.2764 )
+v_offset = 20.0
+
+[node name="GalactixRacer" parent="ships/path2/PathFollow" instance=ExtResource( 23 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+
+[node name="path3" type="Path" parent="ships"]
+curve = SubResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PathFollow" type="PathFollow" parent="ships/path3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0848, 4.9657, 4.32228 )
+v_offset = 20.0
+
+[node name="MeteorSlicer" parent="ships/path3/PathFollow" instance=ExtResource( 25 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.167557, 0, -0.167557 )
+
+[node name="path4" type="Path" parent="ships"]
+curve = SubResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PathFollow" type="PathFollow" parent="ships/path4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17879, 4.9657, -39.7449 )
+v_offset = 20.0
+
+[node name="RedFighter" parent="ships/path4/PathFollow" instance=ExtResource( 22 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+
+[node name="path5" type="Path" parent="ships"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.29653, 2.27944 )
+curve = SubResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PathFollow" type="PathFollow" parent="ships/path5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8639, 4.9657, -54.3223 )
+v_offset = 20.0
+
+[node name="UltravioletIntruder" parent="ships/path5/PathFollow" instance=ExtResource( 24 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+
+[node name="path6" type="Path" parent="ships"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.28076, 0 )
+curve = SubResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PathFollow" type="PathFollow" parent="ships/path6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.05279, 4.9657, -49.4632 )
+v_offset = 20.0
+
+[node name="Warship" parent="ships/path6/PathFollow" instance=ExtResource( 26 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )

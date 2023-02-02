@@ -7,7 +7,8 @@
 [ext_resource path="res://src/entity/character/animation/tooling_anim.tres" type="Animation" id=5]
 [ext_resource path="res://src/entity/character/animation/walking_anim.tres" type="Animation" id=6]
 [ext_resource path="res://asset/img/map/Content/Characters/LunarLandscape_Content_001_1_palette3.material" type="Material" id=7]
-[ext_resource path="res://src/entity/player/player.gd" type="Script" id=8]
+[ext_resource path="res://src/entity/character/player/player.gd" type="Script" id=8]
+
 
 [sub_resource type="ArrayMesh" id=1]
 blend_shape_mode = 0

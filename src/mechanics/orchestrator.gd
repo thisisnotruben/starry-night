@@ -56,4 +56,4 @@ func _on_timer_timeout():
 
 func update_blackhole_position() -> void:
 	if timer.time_left > 0:
-		blackHole_pathFollow.unit_offset = timer.time_left / BLACKHOLE_TIME
+		blackHole_pathFollow.unit_offset = 1.0 - timer.time_left / BLACKHOLE_TIME

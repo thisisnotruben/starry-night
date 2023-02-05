@@ -4,6 +4,7 @@ class_name Fsm
 var states: Dictionary = {}
 var _prev_state: _State = null
 var _curr_state: _State = null
+var lock_state := false
 
 # _state: States (enum)
 signal state_changed(_state)
@@ -16,7 +17,8 @@ func init(_player) -> void:
 		StateType.States.TOOL: Tool.new(),
 		StateType.States.VICTORY: Victory.new(),
 		StateType.States.DEFEAT: Defeat.new(),
-		StateType.States.DEATH: Death.new()
+		StateType.States.DEATH: Death.new(),
+		StateType.States.WIN: Win.new()
 	}
 	for state in states:
 		var _state = states[state].init(_player, state)
@@ -26,7 +28,7 @@ func init(_player) -> void:
 
 # _state: States (enum)
 func change_state(_state) -> void:
-	if _state == null or (_curr_state != null \
+	if lock_state or _state == null or (_curr_state != null \
 	and _curr_state.state_type == _state):
 		return
 	if _curr_state != null:
@@ -35,6 +37,9 @@ func change_state(_state) -> void:
 	_prev_state = _curr_state
 	_curr_state = states[_state]
 	emit_signal("state_changed", _state)
+
+func lock(_lock: bool) -> void:
+	lock_state = _lock
 
 func physics_process(delta: float) -> void:
 	 _curr_state.physics_process(delta)

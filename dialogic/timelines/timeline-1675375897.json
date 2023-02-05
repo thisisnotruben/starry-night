@@ -1,0 +1,15 @@
+{
+	"events": [
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "The Blackhole approaches, an oblivion that swallows life, time, histories, and memory.\nFear not commodore, for you might have failed to save yourself and the human race but you will soon be a shooting star.\nOn your way to death, you perhaps ponder…\nif it’s possible for your soul to be amongst a starry night, glistening within endless darkness and be the new Milky Way?"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1675375897.json",
+		"name": "end_bad"
+	}
+}

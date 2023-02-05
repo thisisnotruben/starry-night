@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/ui/credit/credits.gd" type="Script" id=1]
+
+[node name="credits" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="panel" type="PanelContainer" parent="."]
+margin_left = 385.0
+margin_top = 141.0
+margin_right = 639.0
+margin_bottom = 459.0
+
+[node name="margin" type="MarginContainer" parent="panel"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 252.0
+margin_bottom = 316.0
+
+[node name="main" type="VBoxContainer" parent="panel/margin"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 242.0
+margin_bottom = 306.0
+
+[node name="label" type="Label" parent="panel/margin/main"]
+margin_right = 234.0
+margin_bottom = 55.0
+text = "Starry Night Credits
+-----------------------"
+align = 1
+valign = 1
+
+[node name="credits" type="Label" parent="panel/margin/main"]
+margin_top = 59.0
+margin_right = 234.0
+margin_bottom = 230.0
+text = "Developer:
+- Ruben Alvarez Reyes
+Authors:
+- Ruben Alvarez Reyes
+- Rachel Jiang
+"
+valign = 1
+
+[node name="return" type="Button" parent="panel/margin/main"]
+margin_top = 234.0
+margin_right = 234.0
+margin_bottom = 264.0
+size_flags_horizontal = 3
+text = "Return to Game"
+
+[node name="exit" type="Button" parent="panel/margin/main"]
+margin_top = 268.0
+margin_right = 234.0
+margin_bottom = 298.0
+size_flags_horizontal = 3
+text = "Exit Game"
+
+[connection signal="pressed" from="panel/margin/main/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="panel/margin/main/exit" to="." method="_on_exit_pressed"]

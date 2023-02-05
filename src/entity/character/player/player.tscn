@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://src/entity/character/animation/victory_anim.tres" type="Animation" id=1]
 [ext_resource path="res://src/entity/character/animation/death_anim.tres" type="Animation" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://src/entity/character/animation/walking_anim.tres" type="Animation" id=6]
 [ext_resource path="res://asset/img/map/Content/Characters/LunarLandscape_Content_001_1_palette3.material" type="Material" id=7]
 [ext_resource path="res://src/entity/character/player/player.gd" type="Script" id=8]
-
+[ext_resource path="res://src/entity/character/animation/win_anim.tres" type="Animation" id=9]
 
 [sub_resource type="ArrayMesh" id=1]
 blend_shape_mode = 0
@@ -2094,6 +2094,7 @@ anims/idle_anim = ExtResource( 4 )
 anims/tooling_anim = ExtResource( 5 )
 anims/victory_anim = ExtResource( 1 )
 anims/walking_anim = ExtResource( 6 )
+anims/win_anim = ExtResource( 9 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.8, 0 )

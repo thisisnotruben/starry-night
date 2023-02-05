@@ -76,8 +76,9 @@ func change_color(color: Color, time, is_fix: bool = false) -> void:
 	var ease_type := Tween.EASE_IN
 	# platform color
 	var start_color: Color = ($CSGCylinder.material as SpatialMaterial).albedo_color
-	tween.interpolate_property($CSGCylinder, "material:albedo_color", \
-		start_color, color, time, trans_type, ease_type)
+	# tween.interpolate_property($CSGCylinder, "material:albedo_color", \
+	#	start_color, color, time, trans_type, ease_type)
+	($CSGCylinder.material as SpatialMaterial).albedo_color = color
 	# light color
 	tween.interpolate_property($OmniLight, "light_color", \
 		$OmniLight.light_color, color, time, trans_type, ease_type)

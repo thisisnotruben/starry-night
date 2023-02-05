@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://asset/img/map/Content/Characters/Charcter1.fbx" type="PackedScene" id=1]
 [ext_resource path="res://src/entity/character/animation/victory_anim.tres" type="Animation" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/entity/character/animation/idle_anim.tres" type="Animation" id=5]
 [ext_resource path="res://src/entity/character/animation/death_anim.tres" type="Animation" id=6]
 [ext_resource path="res://src/entity/character/animation/tooling_anim.tres" type="Animation" id=7]
+[ext_resource path="res://src/entity/character/animation/win_anim.tres" type="Animation" id=8]
 
 [node name="Charcter1" instance=ExtResource( 1 )]
 
@@ -17,3 +18,4 @@ anims/idle_anim = ExtResource( 5 )
 anims/tooling_animation = ExtResource( 7 )
 anims/victory_anim = ExtResource( 2 )
 anims/walking_anim = ExtResource( 3 )
+anims/win_anim = ExtResource( 8 )

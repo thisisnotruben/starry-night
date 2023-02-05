@@ -1,0 +1,19 @@
+{
+	"events": [
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1675517853.cfg"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "The ship has been repaired! bravo commodore!\nNot only have you rescued the human race, you have surmounted fate of the stars\nLittle bright deaths that forms a starry night…\nFor tonight off to the wormhole you go! In this other world, maybe the stars do not perish and nor will you.\nEnjoy the infinite life."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1675375866.json",
+		"name": "end_good"
+	}
+}

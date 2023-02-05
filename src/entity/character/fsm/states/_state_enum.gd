@@ -8,5 +8,6 @@ enum States{
 	TOOL,
 	VICTORY,
 	DEFEAT,
-	DEATH
+	DEATH,
+	WIN
 }

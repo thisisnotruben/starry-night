@@ -15,4 +15,15 @@ func _ready() -> void:
 		ship.init(path_follow)
 
 func _on_game_finish(won: bool) -> void:
-	pass # TODO
+	var scene_path = "res://src/ui/end/end_win.tscn"
+	var state = StateType.States.WIN
+	if not won:
+		scene_path = "res://src/ui/end/end_lose.tscn"
+		state = StateType.States.DEATH
+
+	var fsm = $platform/player.fsm
+	fsm.change_state(state)
+	fsm.lock(true)
+
+	yield(get_tree().create_timer(5.0), "timeout")
+	get_tree().change_scene(scene_path)

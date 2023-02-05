@@ -345,6 +345,7 @@ v_offset = 20.0
 
 [node name="CamoStellarJet" parent="ships/path1/PathFollow" instance=ExtResource( 18 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+speed = 17.0
 
 [node name="path2" type="Path" parent="ships"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.02134, 0 )
@@ -359,6 +360,7 @@ v_offset = 20.0
 
 [node name="GalactixRacer" parent="ships/path2/PathFollow" instance=ExtResource( 23 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+speed = 15.0
 
 [node name="path3" type="Path" parent="ships"]
 curve = SubResource( 6 )
@@ -372,6 +374,7 @@ v_offset = 20.0
 
 [node name="MeteorSlicer" parent="ships/path3/PathFollow" instance=ExtResource( 25 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.167557, 0, -0.167557 )
+speed = 19.0
 
 [node name="path4" type="Path" parent="ships"]
 curve = SubResource( 7 )
@@ -385,6 +388,7 @@ v_offset = 20.0
 
 [node name="RedFighter" parent="ships/path4/PathFollow" instance=ExtResource( 22 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+speed = 22.0
 
 [node name="path5" type="Path" parent="ships"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.29653, 2.27944 )
@@ -399,6 +403,7 @@ v_offset = 20.0
 
 [node name="UltravioletIntruder" parent="ships/path5/PathFollow" instance=ExtResource( 24 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+speed = 15.0
 
 [node name="path6" type="Path" parent="ships"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.28076, 0 )
@@ -413,3 +418,4 @@ v_offset = 20.0
 
 [node name="Warship" parent="ships/path6/PathFollow" instance=ExtResource( 26 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+speed = 14.0

@@ -9,5 +9,7 @@ enum States{
 	VICTORY,
 	DEFEAT,
 	DEATH,
-	WIN
+	WIN,
+	REJECT,
+	FALL
 }

@@ -3,6 +3,7 @@
 [ext_resource path="res://src/mechanics/objective_fix.gd" type="Script" id=1]
 
 [sub_resource type="SpatialMaterial" id=2]
+resource_local_to_scene = true
 
 [sub_resource type="CylinderShape" id=1]
 

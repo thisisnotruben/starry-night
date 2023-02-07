@@ -69,6 +69,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/dialogic/Other/DialogicUtil.gd"
 }, {
+"base": "Move",
+"class": "Fall",
+"language": "GDScript",
+"path": "res://src/entity/character/fsm/states/Fall.gd"
+}, {
 "base": "Node",
 "class": "Fsm",
 "language": "GDScript",
@@ -94,6 +99,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/entity/character/fsm/states/move.gd"
 }, {
+"base": "Spatial",
+"class": "Objective",
+"language": "GDScript",
+"path": "res://src/mechanics/objective_fix.gd"
+}, {
 "base": "Node",
 "class": "Orchestrator",
 "language": "GDScript",
@@ -103,6 +113,11 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/entity/character/player/player.gd"
+}, {
+"base": "_State",
+"class": "Reject",
+"language": "GDScript",
+"path": "res://src/entity/character/fsm/states/reject.gd"
 }, {
 "base": "Node",
 "class": "Ship",
@@ -147,13 +162,16 @@ _global_script_class_icons={
 "DialogicParser": "",
 "DialogicResources": "",
 "DialogicUtil": "",
+"Fall": "",
 "Fsm": "",
 "HistoryRow": "",
 "Hud": "",
 "Idle": "",
 "Move": "",
+"Objective": "",
 "Orchestrator": "",
 "Player": "",
+"Reject": "",
 "Ship": "",
 "StateType": "",
 "Tool": "",
@@ -164,7 +182,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="wildjam_assembly"
+config/name="Starry Night"
 run/main_scene="res://src/ui/start/start.tscn"
 config/icon="res://icon.png"
 config/auto_accept_quit=false

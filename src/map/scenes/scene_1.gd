@@ -4,10 +4,11 @@ extends Spatial
 func _ready() -> void:
 	var orchestrator: Orchestrator = $orchestrator.init(
 		$platform/objectives.get_children(),
-		$blackhole/Path/PathFollow)
+		$blackhole/Path/PathFollow,
+		$worldEnvironment,
+		$gui/hud
+	)
 	orchestrator.connect("game_finish", self, "_on_game_finish")
-	orchestrator.connect("curr_score", $gui/hud, "set_score")
-	orchestrator.connect("blackhole_time", $gui/hud, "set_time")
 
 	for path in $ships.get_children():
 		var path_follow: Node = path.get_child(0)
@@ -25,5 +26,5 @@ func _on_game_finish(won: bool) -> void:
 	fsm.change_state(state)
 	fsm.lock(true)
 
-	yield(get_tree().create_timer(5.0), "timeout")
+	yield(get_tree().create_timer(4.0), "timeout")
 	get_tree().change_scene(scene_path)

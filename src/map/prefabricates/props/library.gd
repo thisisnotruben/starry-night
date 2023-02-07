@@ -1,7 +1,7 @@
 extends Spatial
 
 
-func _ready():
+func _ready() -> void:
 	for child in get_children():
 		var mesh = child.get_child(0).get_child(0)
 		if mesh is MeshInstance:

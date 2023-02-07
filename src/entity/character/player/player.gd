@@ -7,8 +7,7 @@ var fsm = Fsm.new()
 
 
 func _ready() -> void:
-	fsm.init(self)
-	add_child(fsm)
+	add_child(fsm.init(self))
 	fsm.change_state(StateType.States.IDLE)
 
 func _physics_process(delta) -> void:

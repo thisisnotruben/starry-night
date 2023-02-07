@@ -6,7 +6,7 @@ export(Characteristic) var characteristic = Characteristic.UP_DOWN
 onready var tween := get_tree().create_tween().bind_node(self).set_loops() \
 	.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 
-func _ready():
+func _ready() -> void:
 	match characteristic:
 		Characteristic.UP_DOWN:
 			up_down()
@@ -16,7 +16,7 @@ func _ready():
 			up_down()
 			glow()
 
-func up_down():
+func up_down() -> void:
 	var initial_position := position
 	var time_delta := rand_range(1.5, 4.0)
 
@@ -24,7 +24,7 @@ func up_down():
 		initial_position - Vector2(0.0, rand_range(2.0, 6.0)), time_delta)
 	tween.tween_property(self, "position", initial_position, time_delta)
 
-func glow():
+func glow() -> void:
 	var initial_scale = scale
 	var time_delta := rand_range(1.5, 4.0)
 

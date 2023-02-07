@@ -1,11 +1,11 @@
 extends Spatial
-
-export var objective_time: float = 15.0
-export var cooldown_time: float = 5.0
-export var fix_time: float = 5.0
+class_name Objective
 
 var player: Player = null
 var fixed: bool = false
+var objective_time: float = 0.0
+var cooldown_time: float = 0.0
+var fix_time: float = 0.0
 
 onready var tween: Tween = $tween
 onready var tween_fix: Tween = $tween_fix
@@ -15,12 +15,20 @@ onready var fix_lbl: Label3D = $OmniLight/fix
 onready var fix_time_lbl: Label3D = $OmniLight/fix/timing
 
 signal score(count)
+signal refresh_time(objective)
 
 
-func _ready() -> void:
-	$fix_timer.wait_time = fix_time
-	$objective_timer.wait_time = objective_time
-	$cooldown_timer.wait_time = cooldown_time
+func init(objective_mechanic: Orchestrator.ObjectiveMechanic) -> Objective:
+	set_time(objective_mechanic)
+	return self
+
+func set_time(objective_mechanic: Orchestrator.ObjectiveMechanic) -> void:
+	objective_time = objective_mechanic.objective_time
+	cooldown_time = objective_mechanic.cooldown_time
+	fix_time = objective_mechanic.fix_time
+	$cooldown_timer.wait_time = objective_mechanic.cooldown_time
+	$objective_timer.wait_time = objective_mechanic.objective_time
+	$fix_timer.wait_time = objective_mechanic.fix_time
 	start_objective()
 
 func _on_area_body_entered(body) -> void:
@@ -35,8 +43,34 @@ func _on_area_body_exited(body) -> void:
 	player = null
 
 func _on_player_state_changed(_state) -> void:
-	if player != null and $cooldown_timer.time_left == 0.0:
+	if player != null:
 		start_fix(_state == StateType.States.TOOL)
+
+func start_objective() -> void:
+	text_lbl.text = "Fix me!"
+	$objective_timer.start()
+	change_color(ColorN("red"), objective_time)
+
+func _on_objective_timer_timeout() -> void:
+	score_point()
+	start_cooldown()
+
+func start_fix(start: bool) -> void:
+	if $cooldown_timer.is_stopped():
+		fix_lbl.visible = start
+		tween_fix.remove_all()
+		if start:
+			$fix_timer.start()
+			change_color(ColorN("green"), fix_time, true)
+			tween_fix.interpolate_method(self, "set_fix_label", fix_time, 0.0, \
+				fix_time, Tween.TRANS_LINEAR, Tween.EASE_IN)
+			tween_fix.start()
+		else:
+			$fix_timer.stop()
+			change_color(ColorN("red"), $objective_timer.time_left)
+	elif player.fsm.get_state() == StateType.States.TOOL:
+		fix_lbl.hide()
+		player.fsm.change_state(StateType.States.REJECT)
 
 func _on_fix_timer_timeout():
 	fixed = $objective_timer.time_left > 0.0
@@ -44,12 +78,13 @@ func _on_fix_timer_timeout():
 	score_point()
 	start_cooldown()
 
-func _on_objective_timer_timeout() -> void:
-	score_point()
-	start_cooldown()
+func start_cooldown() -> void:
+	text_lbl.text = "Cooling down!"
+	$cooldown_timer.start()
+	change_color(ColorN("yellow"), cooldown_time)
 
-func _on_cooldown_timer_timeout():
-	start_objective()
+func _on_cooldown_timer_timeout() -> void:
+	emit_signal("refresh_time", self)
 
 func score_point() -> int:
 	var score = -1
@@ -71,52 +106,37 @@ func score_point() -> int:
 	return score
 
 func change_color(color: Color, time, is_fix: bool = false) -> void:
-	tween.remove_all()
 	var trans_type := Tween.TRANS_LINEAR
 	var ease_type := Tween.EASE_IN
+	var half_time = time / 2.0
+
 	# platform color
-	var start_color: Color = ($CSGCylinder.material as SpatialMaterial).albedo_color
-	# tween.interpolate_property($CSGCylinder, "material:albedo_color", \
-	#	start_color, color, time, trans_type, ease_type)
-	($CSGCylinder.material as SpatialMaterial).albedo_color = color
+	tween.remove($CSGCylinder, "material:albedo_color")
+	tween.interpolate_property($CSGCylinder, "material:albedo_color", \
+		($CSGCylinder.material as SpatialMaterial).albedo_color, \
+		color, half_time, trans_type, ease_type)
+
 	# light color
+	tween.remove($OmniLight, "light_color")
 	tween.interpolate_property($OmniLight, "light_color", \
-		$OmniLight.light_color, color, time, trans_type, ease_type)
-	# label color & timing
+		$OmniLight.light_color, color, half_time, trans_type, ease_type)
+
+	# label color
 	for label in [fix_lbl, fix_time_lbl, text_lbl, time_lbl]:
+		tween.remove(label, "modulate")
 		tween.interpolate_property(label, "modulate", \
-			label.modulate, color, time, trans_type, ease_type)
+			label.modulate, color, half_time, trans_type, ease_type)
+
+	# label timing
 	if not is_fix:
-		tween.interpolate_method(self, "set_timeing_label", time, 0.0, \
-		time, trans_type, ease_type)
+		tween.remove(self, "set_timing_label")
+		tween.interpolate_method(self, "set_timing_label", time, 0.0, \
+			time, trans_type, ease_type)
+
 	tween.start()
 
-func start_objective() -> void:
-	text_lbl.text = "Fix me!"
-	$objective_timer.start()
-	change_color(ColorN("red"), objective_time)
-
-func start_fix(start: bool):
-	fix_lbl.visible = start
-	tween_fix.remove_all()
-	if start:
-		$fix_timer.start()
-		change_color(ColorN("green"), fix_time, true)
-		tween_fix.interpolate_method(self, "set_fix_label", fix_time, 0.0, \
-			fix_time, Tween.TRANS_LINEAR, Tween.EASE_IN)
-		tween_fix.start()
-	else:
-		$fix_timer.stop()
-		change_color(ColorN("red"), $objective_timer.time_left)
-
-func start_cooldown() -> void:
-	text_lbl.text = "Cooling down!"
-	$cooldown_timer.start()
-	change_color(ColorN("yellow"), cooldown_time)
-
-func set_timeing_label(_time: float) -> void:
+func set_timing_label(_time: float) -> void:
 	time_lbl.text = "%.0f" % _time
 
 func set_fix_label(_time: float) -> void:
 	fix_time_lbl.text = "%.0f" % _time
-

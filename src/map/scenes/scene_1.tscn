@@ -28,7 +28,6 @@
 [ext_resource path="res://src/entity/ship/Warship.tscn" type="PackedScene" id=26]
 
 [sub_resource type="PanoramaSky" id=2]
-radiance_size = 0
 panorama = ExtResource( 13 )
 
 [sub_resource type="Environment" id=1]
@@ -57,7 +56,7 @@ adjustment_brightness = 2.18
 
 [sub_resource type="Curve3D" id=3]
 _data = {
-"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0.0887871, -0.0437374, 0.0925446, 0, 0, 0, 0, 0, 0, -42.0794, -4.37287, 47.5803 ),
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 11.6703, -0.0437369, -30.5293, 0, 0, 0, 0, 0, 0, -25.2334, -4.37287, 23.2535 ),
 "tilts": PoolRealArray( 0, 0 )
 }
 
@@ -105,9 +104,13 @@ script = ExtResource( 19 )
 environment = SubResource( 1 )
 
 [node name="music" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 15 )
+autoplay = true
 
 [node name="orchestrator" parent="." instance=ExtResource( 20 )]
+SCORE_MAX = 10
+SCORE_WIN_TIME_REDUCTION = 5.0
 
 [node name="gui" type="CanvasLayer" parent="."]
 
@@ -317,7 +320,7 @@ __meta__ = {
 curve = SubResource( 3 )
 
 [node name="PathFollow" type="PathFollow" parent="blackhole/Path"]
-transform = Transform( 0.99946, 0.00602255, 0.0323092, -0.00622213, 0.999962, 0.00608004, -0.0322714, -0.00627779, 0.999459, 0.0887871, -0.0437374, 0.0925446 )
+transform = Transform( 0.99946, 0.00602255, 0.0323092, -0.00622213, 0.999962, 0.00608004, -0.0322714, -0.00627779, 0.999459, 11.6703, -0.0437369, -30.5293 )
 loop = false
 
 [node name="blackhole" parent="blackhole/Path/PathFollow" instance=ExtResource( 17 )]

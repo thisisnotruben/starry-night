@@ -180,6 +180,10 @@ Copyright © 2021 Bleeoop.com. All rights reserved.
 ```
 
 ## Source code
+- [Dialogic 1.4.5](https://github.com/coppolaemilio/dialogic)
+	- [MIT license](https://opensource.org/licenses/MIT)
+
+- [In **src** directory](/src)
 ```
 MIT License
 

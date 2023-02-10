@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/mechanics/objective_fix.gd" type="Script" id=1]
+[ext_resource path="res://asset/img/font/font_32.tres" type="DynamicFont" id=2]
 
 [sub_resource type="SpatialMaterial" id=2]
 resource_local_to_scene = true
@@ -36,17 +37,21 @@ omni_range = 1.5
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.585388, 0 )
 visible = false
 text = "Fixing..."
+font = ExtResource( 2 )
 
 [node name="timing" type="Label3D" parent="OmniLight/fix"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.194931, 0 )
 text = "0"
+font = ExtResource( 2 )
 
 [node name="text" type="Label3D" parent="OmniLight"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1467, 0 )
 text = "Cooling Down!"
+font = ExtResource( 2 )
 
 [node name="timing" type="Label3D" parent="OmniLight"]
 text = "0"
+font = ExtResource( 2 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0583317, 0 )

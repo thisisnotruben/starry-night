@@ -18,18 +18,30 @@ signal score(count)
 signal refresh_time(objective)
 
 
-func init(objective_mechanic: Orchestrator.ObjectiveMechanic) -> Objective:
-	set_time(objective_mechanic)
+func _ready() -> void:
+	randomize()
+
+func init(objective_mechanic: Orchestrator.ObjectiveMechanic, rand_start: bool) -> Objective:
+	set_time(objective_mechanic, rand_start)
 	return self
 
-func set_time(objective_mechanic: Orchestrator.ObjectiveMechanic) -> void:
+func set_time(objective_mechanic: Orchestrator.ObjectiveMechanic, rand_start: bool = false) -> void:
 	objective_time = objective_mechanic.objective_time
 	cooldown_time = objective_mechanic.cooldown_time
 	fix_time = objective_mechanic.fix_time
 	$cooldown_timer.wait_time = objective_mechanic.cooldown_time
 	$objective_timer.wait_time = objective_mechanic.objective_time
 	$fix_timer.wait_time = objective_mechanic.fix_time
-	start_objective()
+
+	change_color_instant(ColorN("red"))
+	if rand_start:
+		if randi() % 2 == 0:
+			change_color_instant(ColorN("yellow"))
+			start_cooldown()
+		else:
+			start_objective()
+	else:
+		start_objective()
 
 func _on_area_body_entered(body) -> void:
 	if body is Player:
@@ -104,6 +116,12 @@ func score_point() -> int:
 
 	fixed = false
 	return score
+
+func change_color_instant(color: Color) -> void:
+	($CSGCylinder.material as SpatialMaterial).albedo_color = color
+	$OmniLight.light_color = color
+	for label in [fix_lbl, fix_time_lbl, text_lbl, time_lbl]:
+		label.modulate = color
 
 func change_color(color: Color, time, is_fix: bool = false) -> void:
 	var trans_type := Tween.TRANS_LINEAR

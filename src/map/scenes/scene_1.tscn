@@ -1,10 +1,10 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://src/map/prefabricates/building/Building_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/map/prefabricates/building/Building_5.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/map/prefabricates/building/LandingPlateform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/map/prefabricates/building/Building.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/entity/robot/QuadrupedTank.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/map/prefabricates/vehicle/Lander.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/map/prefabricates/building/Building_3.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/map/prefabricates/building/Building_4.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/map/prefabricates/environment/environment_meshLibrary.tres" type="MeshLibrary" id=8]
@@ -14,7 +14,7 @@
 [ext_resource path="res://src/entity/character/player/player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://asset/img/background/scene_1_background.png" type="Texture" id=13]
 [ext_resource path="res://src/mechanics/objective_fix.tscn" type="PackedScene" id=14]
-[ext_resource path="res://asset/snd/DOS-88_synthwave_music_library/DOS-88 - Far away.mp3" type="AudioStream" id=15]
+[ext_resource path="res://src/ui/tutorial/tutorial.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/ui/game/game.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/entity/blackhole/blackhole.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/entity/ship/CamoStellarJet.tscn" type="PackedScene" id=18]
@@ -26,6 +26,7 @@
 [ext_resource path="res://src/entity/ship/UltravioletIntruder.tscn" type="PackedScene" id=24]
 [ext_resource path="res://src/entity/ship/MeteorSlicer.tscn" type="PackedScene" id=25]
 [ext_resource path="res://src/entity/ship/Warship.tscn" type="PackedScene" id=26]
+[ext_resource path="res://src/map/prefabricates/vehicle/Truck_Body_1.tscn" type="PackedScene" id=27]
 
 [sub_resource type="PanoramaSky" id=2]
 panorama = ExtResource( 13 )
@@ -103,11 +104,6 @@ script = ExtResource( 19 )
 [node name="worldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
 
-[node name="music" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
-stream = ExtResource( 15 )
-autoplay = true
-
 [node name="orchestrator" parent="." instance=ExtResource( 20 )]
 SCORE_MAX = 10
 SCORE_WIN_TIME_REDUCTION = 5.0
@@ -119,13 +115,14 @@ SCORE_WIN_TIME_REDUCTION = 5.0
 [node name="game" parent="gui" instance=ExtResource( 16 )]
 visible = false
 
+[node name="tutorial" parent="gui" instance=ExtResource( 15 )]
+
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 light_energy = 0.328
 
 [node name="platform" type="Spatial" parent="."]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="environment" type="GridMap" parent="platform"]
@@ -155,8 +152,7 @@ __meta__ = {
 
 [node name="buildings" type="Spatial" parent="platform"]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="cargo" parent="platform/buildings" instance=ExtResource( 1 )]
@@ -170,9 +166,6 @@ transform = Transform( 0.438575, 0, 0.898695, 0, 1, 0, -0.898695, 0, 0.438575, -
 
 [node name="medical" parent="platform/buildings" instance=ExtResource( 4 )]
 transform = Transform( -0.800219, 0, 0.599708, 0, 1, 0, -0.599708, 0, -0.800219, -10.2346, 0.0999999, 3.43784 )
-
-[node name="ship_defense" parent="platform/buildings" instance=ExtResource( 5 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.0999999, -6 )
 
 [node name="bridge" type="Spatial" parent="platform/buildings"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00430107, 0.1, -0.00541019 )
@@ -198,14 +191,17 @@ transform = Transform( 0.472228, 0, -0.881477, 0, 1, 0, 0.881477, 0, 0.472228, -
 [node name="Building_6" parent="platform/buildings/engineering" instance=ExtResource( 7 )]
 transform = Transform( -0.347214, 0, -0.937786, 0, 1, 0, 0.937786, 0, -0.347214, 2, 0.1, 0 )
 
+[node name="Lander" parent="platform/buildings" instance=ExtResource( 5 )]
+transform = Transform( 0.928233, 0, 0.372, 0, 1, 0, -0.372, 0, 0.928233, -0.461419, 0.1, -6.19466 )
+
+[node name="Truck_Body_1" parent="platform/buildings" instance=ExtResource( 27 )]
+transform = Transform( -0.426, 0, -0.904723, 0, 1, 0, 0.904723, 0, -0.426, 2.36458, 0.0999999, -4.92843 )
+
 [node name="path" type="Spatial" parent="platform"]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
-
-[node name="Path" parent="platform/path" instance=ExtResource( 10 )]
-transform = Transform( 0.309233, 0, 0.950986, 0, 1, 0, -0.950986, 0, 0.309233, -5.71275, 0.0600448, 1.35611 )
 
 [node name="Path19" parent="platform/path" instance=ExtResource( 10 )]
 transform = Transform( 0.609578, 0, 0.792726, 0, 1, 0, -0.792726, 0, 0.609578, -7.38188, 0.1, 0.999367 )
@@ -214,19 +210,16 @@ transform = Transform( 0.609578, 0, 0.792726, 0, 1, 0, -0.792726, 0, 0.609578, -
 transform = Transform( -0.626468, 0, 0.779447, 0, 1, 0, -0.779447, 0, -0.626468, -6.79069, 0.1, 2.05367 )
 
 [node name="Path16" parent="platform/path" instance=ExtResource( 10 )]
-transform = Transform( -0.626468, 0, 0.779447, 0, 1, 0, -0.779447, 0, -0.626468, -5.2669, 0.0732548, 0.666523 )
+transform = Transform( -0.626468, 0, 0.779447, 0, 1, 0, -0.779447, 0, -0.626468, -5.2669, 0.1, 0.666523 )
 
 [node name="Path12" parent="platform/path" instance=ExtResource( 10 )]
 transform = Transform( 0.979399, 0, 0.201933, 0, 1, 0, -0.201933, 0, 0.979399, -5.71275, 0.1, -2.67151 )
 
 [node name="Path13" parent="platform/path" instance=ExtResource( 10 )]
-transform = Transform( 0.979399, 0, 0.201933, 0, 1, 0, -0.201933, 0, 0.979399, -5.265, 0.0999998, -0.713763 )
+transform = Transform( 0.979399, 0, 0.201933, 0, 1, 0, -0.201933, 0, 0.979399, -5.265, 0.1, -0.713763 )
 
 [node name="Path14" parent="platform/path" instance=ExtResource( 10 )]
 transform = Transform( 0.979399, 0, 0.201933, 0, 1, 0, -0.201933, 0, 0.979399, -4.79593, 0.1, 1.21182 )
-
-[node name="Path2" parent="platform/path" instance=ExtResource( 10 )]
-transform = Transform( 0.309233, 0, 0.950986, 0, 1, 0, -0.950986, 0, 0.309233, -3.81284, 0.25, 1.95283 )
 
 [node name="Path3" parent="platform/path" instance=ExtResource( 10 )]
 transform = Transform( 0.0712885, 0, 0.997456, 0, 1, 0, -0.997456, 0, 0.0712885, -1.68871, 0.1, 2.14183 )
@@ -256,18 +249,22 @@ transform = Transform( 0.591577, 0, 0.806248, 0, 1, 0, -0.806248, 0, 0.591577, 8
 transform = Transform( -0.990798, 0, -0.135352, 0, 1, 0, 0.135352, 0, -0.990798, 7.59373, 0.1, -1.76465 )
 
 [node name="Path10" parent="platform/path" instance=ExtResource( 10 )]
-transform = Transform( -0.765191, 0, -0.643803, 0, 1, 0, 0.643803, 0, -0.765191, 6.05786, 0.0999998, -3.68301 )
+transform = Transform( -0.765191, 0, -0.643803, 0, 1, 0, 0.643803, 0, -0.765191, 6.05786, 0.1, -3.68301 )
 
 [node name="Path11" parent="platform/path" instance=ExtResource( 10 )]
-transform = Transform( -0.971557, 0, -0.236804, 0, 1, 0, 0.236804, 0, -0.971557, 5.53913, 0.0999998, -5.23029 )
+transform = Transform( -0.971557, 0, -0.236804, 0, 1, 0, 0.236804, 0, -0.971557, 5.53913, 0.1, -5.23029 )
 
 [node name="more_props" type="Spatial" parent="platform"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="SolarPanel_1" parent="platform/more_props" instance=ExtResource( 11 )]
 transform = Transform( 0.683338, 0, -0.730103, 0, 1, 0, 0.730103, 0, 0.683338, 6.87905, 0.1, 4.68269 )
 
 [node name="SolarPanel_2" parent="platform/more_props" instance=ExtResource( 11 )]
-transform = Transform( -0.328405, 0, -0.944537, 0, 1, 0, 0.944537, 0, -0.328405, 12.5205, 0.1, 0.139539 )
+transform = Transform( -0.328405, 0, -0.944537, 0, 1, 0, 0.944537, 0, -0.328405, 12.5205, 0.0999999, 0.139539 )
 
 [node name="SolarPanel_3" parent="platform/more_props" instance=ExtResource( 11 )]
 transform = Transform( -0.328405, 0, -0.944537, 0, 1, 0, 0.944537, 0, -0.328405, 11.0234, 0.1, -0.32409 )
@@ -293,22 +290,22 @@ __meta__ = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.42111, -0.164487, -3.95796 )
 
 [node name="objective_fix2" parent="platform/objectives" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13047, 0.0999999, 1.07416 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13047, -0.164487, 1.07416 )
 
 [node name="objective_fix3" parent="platform/objectives" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0446854, 0.100001, -2.86683 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0446854, -0.164487, -2.86683 )
 
 [node name="objective_fix4" parent="platform/objectives" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.245, 0.1, 1.324 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.245, -0.0144868, 1.324 )
 
 [node name="objective_fix5" parent="platform/objectives" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.797, 0.1, -3.157 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.797, -0.0480656, -3.157 )
 
 [node name="objective_fix6" parent="platform/objectives" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015, 0.1, 2.4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015, -0.014487, 2.4 )
 
 [node name="player" parent="platform" instance=ExtResource( 12 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.0768358, 0 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.0768359, 0 )
 
 [node name="blackhole" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1986, 7.02325, -47.1035 )

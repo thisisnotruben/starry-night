@@ -16,8 +16,6 @@ ___
 	- [Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)](https://creativecommons.org/licenses/by-nd/4.0/)
 - [Voxel space ships](https://maxparata.itch.io/voxel-spaceships)
 	- [Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)](https://creativecommons.org/licenses/by-nd/4.0/)
-- [Voxel mechas](https://maxparata.itch.io/voxel-mechas)
-	- [Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)](https://creativecommons.org/licenses/by-nd/4.0/)
 
 ### 2D
 - [Pixel-art spaceship sprites](https://lowich.itch.io/free-spaceship-sprites)
@@ -86,9 +84,8 @@ RIGHTS GRANTED
 a) Licensee may use the licensed sound effects on an unlimited number of projects for
 the entirety of their life time.
 
-b) Licensee may use the licensed sound effects for personal and commercial projects
+b) Licensee may use the licensed sound effects for personal and commercial projects without attribution to the original creator.
 
-without attribution to the original creator.
 c) Licensee may use the licensed sound effects for the purposes of synchronization with
 audio and visual projects the Licensee is involved with, which includes but is not
 limited to: games, films, television & interactive projects.

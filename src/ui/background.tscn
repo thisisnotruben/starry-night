@@ -1,4 +1,4 @@
-[gd_scene load_steps=574 format=2]
+[gd_scene load_steps=573 format=2]
 
 [ext_resource path="res://asset/img/planet/still/Comets/1.png" type="Texture" id=1]
 [ext_resource path="res://asset/img/planet/animated/Forest_or_Jungle_or_Swamp/Clouds/Forest_or_Jungle_or_Swamp_clouds-sprite-sheet.png" type="Texture" id=3]
@@ -13,12 +13,11 @@
 [ext_resource path="res://asset/img/planet/still/Asteroids/8.png" type="Texture" id=32]
 [ext_resource path="res://asset/img/planet/still/Comets/8.png" type="Texture" id=47]
 [ext_resource path="res://asset/img/planet/still/Stations_16x16/Station2.png" type="Texture" id=48]
-[ext_resource path="res://asset/snd/DOS-88_synthwave_music_library/DOS-88 - Far away.mp3" type="AudioStream" id=51]
 [ext_resource path="res://asset/img/background/space_background_start.png" type="Texture" id=52]
 [ext_resource path="res://asset/img/planet/still/Starfield/4.png" type="Texture" id=53]
 [ext_resource path="res://asset/img/planet/still/Stations_16x16/Station1.png" type="Texture" id=54]
 [ext_resource path="res://asset/img/planet/still/Quasars/Quasar3.png" type="Texture" id=55]
-[ext_resource path="res://src/celestial_transform.gd" type="Script" id=56]
+[ext_resource path="res://src/ui/celestial_transform.gd" type="Script" id=56]
 [ext_resource path="res://asset/img/planet/still/Starfield/6.png" type="Texture" id=552]
 
 [sub_resource type="Environment" id=13]
@@ -2294,10 +2293,6 @@ anim_offset_random = 1.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 13 )
 
-[node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 51 )
-autoplay = true
-
 [node name="background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2341,7 +2336,7 @@ script = ExtResource( 56 )
 position = Vector2( -7.76332, -27.8505 )
 scale = Vector2( 0.189349, 0.207792 )
 frames = SubResource( 12 )
-frame = 18
+frame = 28
 playing = true
 script = ExtResource( 56 )
 
@@ -2361,7 +2356,7 @@ script = ExtResource( 56 )
 position = Vector2( 23.858, -45.4292 )
 scale = Vector2( 0.350099, 0.344156 )
 frames = SubResource( 10 )
-frame = 46
+frame = 56
 playing = true
 script = ExtResource( 56 )
 
@@ -2369,7 +2364,7 @@ script = ExtResource( 56 )
 position = Vector2( 21.3965, -28.0662 )
 scale = Vector2( 0.137081, 0.123377 )
 frames = SubResource( 11 )
-frame = 7
+frame = 17
 playing = true
 script = ExtResource( 56 )
 
@@ -2377,7 +2372,7 @@ script = ExtResource( 56 )
 position = Vector2( 523, 457.207 )
 scale = Vector2( 2.3125, 2.02083 )
 frames = SubResource( 7 )
-frame = 17
+frame = 27
 playing = true
 script = ExtResource( 56 )
 
@@ -2385,14 +2380,14 @@ script = ExtResource( 56 )
 position = Vector2( 44.973, 27.7114 )
 scale = Vector2( 0.358108, 0.384021 )
 frames = SubResource( 8 )
-frame = 35
+frame = 45
 playing = true
 
 [node name="moon2" type="AnimatedSprite" parent="planets/lava_planet"]
 position = Vector2( 26.8108, -35.1341 )
 scale = Vector2( 0.364864, 0.386598 )
 frames = SubResource( 9 )
-frame = 43
+frame = 53
 playing = true
 
 [node name="station" type="Sprite" parent="planets/lava_planet"]
@@ -2404,7 +2399,7 @@ texture = ExtResource( 48 )
 position = Vector2( 869, 272.177 )
 scale = Vector2( 2.5625, 2.3125 )
 frames = SubResource( 5 )
-frame = 99
+frame = 108
 playing = true
 script = ExtResource( 56 )
 
@@ -2412,7 +2407,7 @@ script = ExtResource( 56 )
 position = Vector2( 30.439, -38.0541 )
 scale = Vector2( 0.44309, 0.418919 )
 frames = SubResource( 6 )
-frame = 30
+frame = 39
 playing = true
 
 [node name="nebula1" type="Sprite" parent="planets"]

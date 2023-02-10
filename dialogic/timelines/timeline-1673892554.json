@@ -5,10 +5,6 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "The great galactic contraction is claiming the last of the great human vestige. Coldness sweeps the galaxy as the last supermassive black hole devours everthing!\nYou! A mere ship commodore finds an uncharted interdimensional wormhole that leads to a heart warming time of the universe.\nRepair your ship to save the human race and escape this agonistic universe!"
-		},
-		{
-			"change_scene": "res://src/map/scenes/scene_1.tscn",
-			"event_id": "dialogic_041"
 		}
 	],
 	"metadata": {

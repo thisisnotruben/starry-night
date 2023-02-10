@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/ui/credit/credits.gd" type="Script" id=1]
+[ext_resource path="res://asset/snd/Interface_Bleeps_OGG/Click_04.ogg" type="AudioStream" id=2]
 
 [node name="credits" type="CenterContainer"]
 anchor_right = 1.0
@@ -11,57 +12,72 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="snd" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -6.0
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="panel" type="PanelContainer" parent="."]
-margin_left = 385.0
-margin_top = 141.0
-margin_right = 639.0
-margin_bottom = 459.0
+margin_left = 231.0
+margin_top = 126.0
+margin_right = 793.0
+margin_bottom = 474.0
 
 [node name="margin" type="MarginContainer" parent="panel"]
 margin_left = 2.0
 margin_top = 2.0
-margin_right = 252.0
-margin_bottom = 316.0
+margin_right = 560.0
+margin_bottom = 346.0
 
 [node name="main" type="VBoxContainer" parent="panel/margin"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 242.0
-margin_bottom = 306.0
+margin_right = 550.0
+margin_bottom = 336.0
 
 [node name="label" type="Label" parent="panel/margin/main"]
-margin_right = 234.0
+margin_right = 542.0
 margin_bottom = 55.0
 text = "Starry Night Credits
------------------------"
+---------------------"
 align = 1
 valign = 1
 
 [node name="credits" type="Label" parent="panel/margin/main"]
 margin_top = 59.0
-margin_right = 234.0
+margin_right = 542.0
 margin_bottom = 230.0
 text = "Developer:
-- Ruben Alvarez Reyes
+    - Ruben Alvarez Reyes
 Authors:
-- Ruben Alvarez Reyes
-- Rachel Jiang
-"
+    - Ruben Alvarez Reyes
+    - qinru
+	"
 valign = 1
 
-[node name="return" type="Button" parent="panel/margin/main"]
+[node name="github" type="LinkButton" parent="panel/margin/main"]
 margin_top = 234.0
-margin_right = 234.0
-margin_bottom = 264.0
+margin_right = 542.0
+margin_bottom = 260.0
+text = "  https://github.com/thisisnotruben/starry-night  "
+underline = 1
+
+[node name="return" type="Button" parent="panel/margin/main"]
+margin_top = 264.0
+margin_right = 542.0
+margin_bottom = 294.0
 size_flags_horizontal = 3
 text = "Return to Game"
 
 [node name="exit" type="Button" parent="panel/margin/main"]
-margin_top = 268.0
-margin_right = 234.0
-margin_bottom = 298.0
+margin_top = 298.0
+margin_right = 542.0
+margin_bottom = 328.0
 size_flags_horizontal = 3
 text = "Exit Game"
 
+[connection signal="pressed" from="panel/margin/main/github" to="." method="_on_github_pressed"]
 [connection signal="pressed" from="panel/margin/main/return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="panel/margin/main/exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://asset/snd/DOS-88_synthwave_music_library/DOS-88 - Far away.mp3" type="AudioStream" id=1]
+
+[node name="music" type="Node"]
+pause_mode = 2
+
+[node name="snd" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true

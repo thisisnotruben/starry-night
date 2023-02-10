@@ -22,6 +22,7 @@ func _on_resume_game_pressed() -> void:
 
 func _on_start_menu_pressed() -> void:
 	$snd.play()
+	$main.hide()
 	$"%confirm_start_menu".popup_centered()
 
 func _on_about_pressed() -> void:
@@ -44,3 +45,4 @@ func _on_confirm_start_menu_confirmed() -> void:
 func _on_confirm_start_menu_cancelled() -> void:
 	$snd.play()
 	$"%confirm_start_menu".hide()
+	$main.show()

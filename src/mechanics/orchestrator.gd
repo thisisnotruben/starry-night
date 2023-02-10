@@ -1,8 +1,6 @@
 extends Node
 class_name Orchestrator
 
-enum Difficulty{EASY, MEDIUM, HARD}
-
 const OBJECTIVE_TIME := [15.0, 30.0]
 const COOLDOWN_TIME := [15.0, 25.0]
 const FIX_TIME := [5.0, 7.0]
@@ -20,7 +18,6 @@ class ObjectiveMechanic:
 		return self
 
 
-export(Difficulty) var difficulty = Difficulty.MEDIUM
 export var SCORE_MAX := 15
 export var SCORE_WIN_TIME_REDUCTION := 2.0
 
@@ -35,15 +32,15 @@ var worldEnvironment: WorldEnvironment = null
 
 onready var timer: Timer = $timer
 
-signal game_finish(won)
+signal game_finish(won, fell)
 signal curr_score(_score, _max_score)
 signal blackhole_time(_time_left)
 
 
 func _ready() -> void:
-	for i in range(30):
-		objective_times.append(ObjectiveMechanic.new().init())
-	set_difficulty()
+	set_process(false)
+	set_physics_process(false)
+	randomize()
 
 func _process(delta) -> void:
 	emit_signal("blackhole_time", timer.time_left)
@@ -52,7 +49,7 @@ func _physics_process(delta) -> void:
 	update_blackhole_position()
 
 func init(_objectives: Array, _blackHole_pathFollow: PathFollow, \
-_worldEnvironment: WorldEnvironment, hud: Hud) -> Node:
+_worldEnvironment: WorldEnvironment, hud: Hud, difficulty: String) -> Node:
 	objectives = _objectives
 	blackHole_pathFollow = _blackHole_pathFollow
 	worldEnvironment = _worldEnvironment
@@ -61,31 +58,37 @@ _worldEnvironment: WorldEnvironment, hud: Hud) -> Node:
 	connect("blackhole_time", hud, "set_time")
 	emit_signal("curr_score", score, SCORE_MAX)
 
+	for i in range(30):
+		objective_times.append(ObjectiveMechanic.new().init())
+	set_difficulty(difficulty)
+
 	for _obj in _objectives:
-		_obj.init(objective_times[randi() % objective_times.size()])
+		_obj.init(objective_times[randi() % objective_times.size()], true)
 		_obj.connect("score", self, "track_score")
 		_obj.connect("refresh_time", self, "refresh_objective_time")
+
+	set_process(true)
+	set_physics_process(true)
 	return self
 
-func set_difficulty() -> void:
+func set_difficulty(_difficulty: String) -> void:
 	timer.stop()
-	blackhole_time = get_blackhole_duration(difficulty)
+	blackhole_time = get_blackhole_duration(_difficulty)
 	timer.wait_time = blackhole_time
 	timer.start()
 
-func get_blackhole_duration(_difficulty) -> float:
+func get_blackhole_duration(_difficulty: String) -> float:
 	var black_hole_time: float = 0.0
 	for obj in objective_times:
 		black_hole_time += obj.objective_time + obj.cooldown_time
-	if objective_times.size() > 0.0:
-		black_hole_time /= objective_times.size()
+	black_hole_time = black_hole_time / (2.0 * objective_times.size()) * SCORE_MAX
 
-	match difficulty:
-		Difficulty.EASY:
+	match _difficulty.to_lower():
+		"easy":
 			black_hole_time *= 0.62
-		Difficulty.MEDIUM:
+		"medium":
 			black_hole_time *= 0.58
-		Difficulty.HARD:
+		"hard":
 			black_hole_time *= 0.54
 	return black_hole_time
 
@@ -97,7 +100,7 @@ func track_score(_score: int) -> void:
 	emit_signal("curr_score", score, SCORE_MAX)
 	if score == SCORE_MAX:
 		won = true
-		emit_signal("game_finish", true)
+		emit_signal("game_finish", true, false)
 	elif _score > 0:
 		var time_left = timer.time_left
 		timer.stop()
@@ -109,7 +112,7 @@ func refresh_objective_time(_objective) -> void:
 
 func _on_timer_timeout():
 	if not won:
-		emit_signal("game_finish", false)
+		emit_signal("game_finish", false, false)
 
 func update_blackhole_position() -> void:
 	if timer.time_left > 0 and blackhole_time > 0:

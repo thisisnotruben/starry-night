@@ -2265,7 +2265,7 @@ particles_anim_loop = false
 offsets = PoolRealArray( 0, 0.15, 0.85, 1 )
 colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=4]
+[sub_resource type="GradientTexture" id=554]
 gradient = SubResource( 3 )
 
 [sub_resource type="ParticlesMaterial" id=1]
@@ -2284,7 +2284,7 @@ linear_accel = 10.0
 linear_accel_random = 0.3
 angle = -45.0
 scale = 2.0
-color_ramp = SubResource( 4 )
+color_ramp = SubResource( 554 )
 anim_offset = 1.0
 anim_offset_random = 1.0
 
@@ -2336,7 +2336,7 @@ script = ExtResource( 56 )
 position = Vector2( -7.76332, -27.8505 )
 scale = Vector2( 0.189349, 0.207792 )
 frames = SubResource( 12 )
-frame = 28
+frame = 12
 playing = true
 script = ExtResource( 56 )
 
@@ -2356,7 +2356,7 @@ script = ExtResource( 56 )
 position = Vector2( 23.858, -45.4292 )
 scale = Vector2( 0.350099, 0.344156 )
 frames = SubResource( 10 )
-frame = 56
+frame = 40
 playing = true
 script = ExtResource( 56 )
 
@@ -2364,7 +2364,7 @@ script = ExtResource( 56 )
 position = Vector2( 21.3965, -28.0662 )
 scale = Vector2( 0.137081, 0.123377 )
 frames = SubResource( 11 )
-frame = 17
+frame = 1
 playing = true
 script = ExtResource( 56 )
 
@@ -2372,7 +2372,7 @@ script = ExtResource( 56 )
 position = Vector2( 523, 457.207 )
 scale = Vector2( 2.3125, 2.02083 )
 frames = SubResource( 7 )
-frame = 27
+frame = 11
 playing = true
 script = ExtResource( 56 )
 
@@ -2380,14 +2380,14 @@ script = ExtResource( 56 )
 position = Vector2( 44.973, 27.7114 )
 scale = Vector2( 0.358108, 0.384021 )
 frames = SubResource( 8 )
-frame = 45
+frame = 29
 playing = true
 
 [node name="moon2" type="AnimatedSprite" parent="planets/lava_planet"]
 position = Vector2( 26.8108, -35.1341 )
 scale = Vector2( 0.364864, 0.386598 )
 frames = SubResource( 9 )
-frame = 53
+frame = 37
 playing = true
 
 [node name="station" type="Sprite" parent="planets/lava_planet"]
@@ -2399,7 +2399,7 @@ texture = ExtResource( 48 )
 position = Vector2( 869, 272.177 )
 scale = Vector2( 2.5625, 2.3125 )
 frames = SubResource( 5 )
-frame = 108
+frame = 92
 playing = true
 script = ExtResource( 56 )
 
@@ -2407,7 +2407,7 @@ script = ExtResource( 56 )
 position = Vector2( 30.439, -38.0541 )
 scale = Vector2( 0.44309, 0.418919 )
 frames = SubResource( 6 )
-frame = 39
+frame = 23
 playing = true
 
 [node name="nebula1" type="Sprite" parent="planets"]

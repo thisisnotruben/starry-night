@@ -1,6 +1,7 @@
 .mono/
 .import/
 meta/
+screenshot/
 
 *.translation
 *.png

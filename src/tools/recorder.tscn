@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/Recorder/recorder.gd" type="Script" id=1]
+
+[node name="recorder" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Recorder" type="ReferenceRect" parent="CenterContainer"]
+margin_left = 112.0
+margin_right = 912.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 800, 600 )
+mouse_filter = 2
+script = ExtResource( 1 )
+output_folder = "screenshot/gifs"
+use_thread = true
+record_action = "record"
+save_action = "save_record"

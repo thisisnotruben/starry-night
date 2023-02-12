@@ -6,6 +6,7 @@ screenshot/
 *.translation
 *.png
 *.gif
+*.ico
 *.ttf
 *.zip
 *.vox

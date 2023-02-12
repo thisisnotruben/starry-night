@@ -7,3 +7,4 @@ pause_mode = 2
 
 [node name="snd" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+autoplay = true

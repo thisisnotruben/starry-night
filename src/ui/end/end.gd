@@ -10,3 +10,6 @@ func _ready() -> void:
 
 func _on_dialogue_finsihed() -> void:
 	$credits.show()
+
+func _on_credits_draw() -> void:
+	$credits/panel/margin/main/return.grab_focus()

@@ -46,3 +46,6 @@ func _on_confirm_start_menu_cancelled() -> void:
 	$snd.play()
 	$"%confirm_start_menu".hide()
 	$main.show()
+
+func _on_main_draw() -> void:
+	$main/panel/margin/main/resume_game.grab_focus()

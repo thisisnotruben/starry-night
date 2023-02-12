@@ -92,6 +92,7 @@ window_title = ""
 visible = false
 
 [connection signal="visibility_changed" from="." to="." method="_on_game_visibility_changed"]
+[connection signal="draw" from="main" to="." method="_on_main_draw"]
 [connection signal="pressed" from="main/panel/margin/main/resume_game" to="." method="_on_resume_game_pressed"]
 [connection signal="pressed" from="main/panel/margin/main/start_menu" to="." method="_on_start_menu_pressed"]
 [connection signal="pressed" from="main/panel/margin/main/about" to="." method="_on_about_pressed"]

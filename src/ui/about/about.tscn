@@ -78,5 +78,6 @@ margin_bottom = 439.0
 size_flags_horizontal = 3
 text = "Back"
 
+[connection signal="draw" from="." to="." method="_on_about_draw"]
 [connection signal="pressed" from="center/panel/margin/main/license_redirect" to="." method="_on_license_redirect_pressed"]
 [connection signal="pressed" from="center/panel/margin/main/back" to="." method="_on_back_pressed"]

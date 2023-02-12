@@ -518,37 +518,37 @@ dialog_name = "end_good"
 
 [node name="background" parent="." instance=ExtResource( 1 )]
 
-[node name="background" parent="background" index="2"]
+[node name="background" parent="background" index="1"]
 texture = ExtResource( 2 )
 
 [node name="quasar" parent="background/planets" index="3"]
 visible = false
 
 [node name="lava_planet" parent="background/planets/quasar" index="0"]
-frame = 56
+frame = 27
 
 [node name="gas_planet" parent="background/planets/quasar" index="3"]
-frame = 29
+frame = 0
 
 [node name="moon" parent="background/planets/quasar" index="4"]
-frame = 55
+frame = 26
 
 [node name="lava_planet" parent="background/planets" index="4"]
 position = Vector2( 560, 468 )
-frame = 5
+frame = 36
 
 [node name="moon1" parent="background/planets/lava_planet" index="0"]
-frame = 13
+frame = 44
 
 [node name="moon2" parent="background/planets/lava_planet" index="1"]
-frame = 56
+frame = 27
 
 [node name="forest_planet" parent="background/planets" index="5"]
 position = Vector2( 867, 213 )
-frame = 24
+frame = 55
 
 [node name="moon" parent="background/planets/forest_planet" index="0"]
-frame = 44
+frame = 15
 
 [node name="robot_planet" parent="background/planets" index="9"]
 position = Vector2( 419, 334 )
@@ -560,7 +560,7 @@ position = Vector2( 295, 494 )
 position = Vector2( 444, 121 )
 scale = Vector2( 2.00521, 1.78646 )
 frames = SubResource( 1 )
-frame = 35
+frame = 6
 playing = true
 script = ExtResource( 131 )
 
@@ -568,7 +568,7 @@ script = ExtResource( 131 )
 position = Vector2( -52.7473, -24.7912 )
 scale = Vector2( 0.532967, 0.521978 )
 frames = SubResource( 2 )
-frame = 24
+frame = 55
 playing = true
 script = ExtResource( 131 )
 

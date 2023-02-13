@@ -177,8 +177,11 @@ Copyright © 2021 Bleeoop.com. All rights reserved.
 ```
 
 ## Source code
-- [Dialogic 1.4.5](https://github.com/coppolaemilio/dialogic)
-	- [MIT license](https://opensource.org/licenses/MIT)
+
+- [MIT license](https://opensource.org/licenses/MIT)
+	- [Dialogic 1.4.5](https://github.com/coppolaemilio/dialogic)
+	- [GodotRecorder 1.0.0](https://github.com/henriquelalves/GodotRecorder)
+	- [Simple Screenshot Script 1.1.1](https://github.com/Maujoe/godot-simlpe-screenshot-script)
 
 - [In **src** directory](/src)
 ```

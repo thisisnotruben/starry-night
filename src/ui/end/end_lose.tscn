@@ -28,7 +28,7 @@ visible = false
 
 [node name="lava_planet" parent="background/planets/quasar" index="0"]
 visible = false
-frame = 54
+frame = 55
 
 [node name="asteroids1" parent="background/planets/quasar" index="1"]
 visible = false
@@ -38,28 +38,28 @@ visible = false
 
 [node name="gas_planet" parent="background/planets/quasar" index="3"]
 visible = false
-frame = 27
+frame = 28
 
 [node name="moon" parent="background/planets/quasar" index="4"]
 visible = false
-frame = 53
+frame = 54
 
 [node name="lava_planet" parent="background/planets" index="4"]
 visible = false
-frame = 3
+frame = 4
 
 [node name="moon1" parent="background/planets/lava_planet" index="0"]
-frame = 11
+frame = 12
 
 [node name="moon2" parent="background/planets/lava_planet" index="1"]
-frame = 54
+frame = 55
 
 [node name="forest_planet" parent="background/planets" index="5"]
 visible = false
-frame = 82
+frame = 83
 
 [node name="moon" parent="background/planets/forest_planet" index="0"]
-frame = 42
+frame = 43
 
 [node name="nebula1" parent="background/planets" index="6"]
 visible = false

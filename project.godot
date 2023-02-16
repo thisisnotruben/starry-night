@@ -333,3 +333,7 @@ project/assembly_name="wildjam_assembly"
 [physics]
 
 common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"

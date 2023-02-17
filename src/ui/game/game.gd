@@ -1,5 +1,7 @@
 extends Control
 
+export(NodePath) var scene_path
+onready var scene: Node = get_node(scene_path)
 
 func _ready() -> void:
 	var popup: ConfirmationDialog = $"%confirm_start_menu"
@@ -39,8 +41,10 @@ func _on_about_visibility_changed() -> void:
 	$main.visible = !$about.visible
 
 func _on_confirm_start_menu_confirmed() -> void:
-	get_tree().paused = false
-	get_tree().change_scene("res://src/ui/start/start.tscn")
+	scene.queue_free()
+	yield(scene, "tree_exited")
+	Music.get_tree().paused = false
+	Music.get_tree().change_scene("res://src/ui/start/start.tscn")
 
 func _on_confirm_start_menu_cancelled() -> void:
 	$snd.play()

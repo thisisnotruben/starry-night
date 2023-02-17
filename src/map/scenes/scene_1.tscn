@@ -114,6 +114,7 @@ SCORE_WIN_TIME_REDUCTION = 5.0
 
 [node name="game" parent="gui" instance=ExtResource( 16 )]
 visible = false
+scene_path = NodePath("../..")
 
 [node name="tutorial" parent="gui" instance=ExtResource( 15 )]
 

@@ -4,7 +4,7 @@
 [ext_resource path="res://src/ui/background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://asset/snd/Interface_Bleeps_OGG/Click_04.ogg" type="AudioStream" id=3]
 [ext_resource path="res://src/ui/credit/credits.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/ui/start/loader.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/map/scenes/scene_1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/ui/start/start.gd" type="Script" id=23]
 [ext_resource path="res://src/ui/about/about.tscn" type="PackedScene" id=560]
 
@@ -16,9 +16,7 @@ script = ExtResource( 23 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="loader" parent="." instance=ExtResource( 5 )]
-progress_bar_path = NodePath("../progress/panel/margin/vBox/progress_bar")
+game_scene = ExtResource( 6 )
 
 [node name="snd" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
@@ -63,6 +61,7 @@ valign = 1
 margin_top = 30.0
 margin_right = 126.0
 margin_bottom = 60.0
+focus_neighbour_top = NodePath("../exit")
 size_flags_horizontal = 3
 text = "Start"
 
@@ -83,6 +82,7 @@ text = "Credits"
 margin_top = 132.0
 margin_right = 126.0
 margin_bottom = 162.0
+focus_neighbour_bottom = NodePath("../start")
 size_flags_horizontal = 3
 text = "Exit"
 
@@ -104,6 +104,7 @@ valign = 1
 margin_top = 30.0
 margin_right = 126.0
 margin_bottom = 60.0
+focus_neighbour_top = NodePath("../back")
 text = "Easy"
 
 [node name="medium" type="Button" parent="main/panel/margin/difficulty"]
@@ -122,6 +123,7 @@ text = "Hard"
 margin_top = 132.0
 margin_right = 126.0
 margin_bottom = 162.0
+focus_neighbour_bottom = NodePath("../easy")
 text = "Back"
 
 [node name="about" parent="." instance=ExtResource( 560 )]
@@ -137,23 +139,23 @@ margin_right = 514.0
 margin_bottom = 302.0
 
 [node name="margin" parent="credits/panel" index="0"]
-margin_bottom = 312.0
+margin_bottom = 316.0
 
 [node name="main" parent="credits/panel/margin" index="0"]
-margin_bottom = 302.0
+margin_bottom = 306.0
 
 [node name="return" parent="credits/panel/margin/main" index="3"]
 visible = false
 
 [node name="exit" parent="credits/panel/margin/main" index="4"]
 visible = false
-margin_top = 264.0
-margin_bottom = 294.0
+margin_top = 268.0
+margin_bottom = 298.0
 
 [node name="back" type="Button" parent="credits/panel/margin/main" index="5"]
-margin_top = 264.0
-margin_right = 542.0
-margin_bottom = 294.0
+margin_top = 268.0
+margin_right = 274.0
+margin_bottom = 298.0
 text = "Back"
 
 [node name="progress" type="CenterContainer" parent="."]
@@ -191,7 +193,6 @@ margin_right = 256.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 256, 16 )
 
-[connection signal="done_loading" from="loader" to="." method="_on_loader_done_loading"]
 [connection signal="draw" from="main/panel/margin/main" to="." method="_on_main_draw"]
 [connection signal="pressed" from="main/panel/margin/main/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="main/panel/margin/main/license" to="." method="_on_license_pressed"]

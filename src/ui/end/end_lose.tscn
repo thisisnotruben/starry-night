@@ -28,7 +28,7 @@ visible = false
 
 [node name="lava_planet" parent="background/planets/quasar" index="0"]
 visible = false
-frame = 0
+frame = 9
 
 [node name="asteroids1" parent="background/planets/quasar" index="1"]
 visible = false
@@ -38,28 +38,28 @@ visible = false
 
 [node name="gas_planet" parent="background/planets/quasar" index="3"]
 visible = false
-frame = 33
+frame = 42
 
 [node name="moon" parent="background/planets/quasar" index="4"]
 visible = false
-frame = 59
+frame = 8
 
 [node name="lava_planet" parent="background/planets" index="4"]
 visible = false
-frame = 9
+frame = 18
 
 [node name="moon1" parent="background/planets/lava_planet" index="0"]
-frame = 17
+frame = 26
 
 [node name="moon2" parent="background/planets/lava_planet" index="1"]
-frame = 0
+frame = 9
 
 [node name="forest_planet" parent="background/planets" index="5"]
 visible = false
-frame = 28
+frame = 97
 
 [node name="moon" parent="background/planets/forest_planet" index="0"]
-frame = 48
+frame = 57
 
 [node name="nebula1" parent="background/planets" index="6"]
 visible = false
@@ -81,7 +81,5 @@ visible = false
 
 [node name="credits" parent="." instance=ExtResource( 4 )]
 visible = false
-
-[connection signal="draw" from="credits" to="." method="_on_credits_draw"]
 
 [editable path="background"]

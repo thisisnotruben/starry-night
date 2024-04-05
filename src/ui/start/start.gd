@@ -2,6 +2,7 @@ extends Control
 
 onready var _root := get_tree().root
 var difficulty := ""
+export var game_scene: PackedScene = null
 
 
 func _on_start_pressed() -> void:
@@ -17,15 +18,7 @@ func _on_difficulty_pressed(_difficulty: String) -> void:
 	var dialog: Node = Dialogic.start("intro")
 	add_child(dialog)
 	yield(dialog, "tree_exited")
-	$loader.start()
-	$progress.show()
-
-func _on_loader_done_loading(packed_scene: PackedScene):
-	queue_free()
-	yield(self, "tree_exited")
-	var scene = packed_scene.instance()
-	scene.difficulty = difficulty
-	_root.add_child(scene)
+	get_tree().change_scene_to(game_scene)
 
 func _on_difficulty_back_pressed() -> void:
 	$snd.play()

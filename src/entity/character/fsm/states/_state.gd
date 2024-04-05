@@ -3,14 +3,15 @@ class_name _State
 
 var player = null
 var state_type
+var fsm
 
 
 signal change_state(_state)
 
-func init(_player, _state_type) -> _State:
-	player = _player
-	state_type = _state_type
-
+func init(args := {}) -> _State:
+	player = args["player"]
+	state_type = args["state_type"]
+	fsm = args["fsm"]
 	return self
 
 func enter() -> void:

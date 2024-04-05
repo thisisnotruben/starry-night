@@ -16,10 +16,10 @@ var camera_spring_arm: SpringArm = null
 var pivot: Spatial = null
 
 
-func init(_player, _state_type) -> _State:
-	.init(_player, _state_type)
-	camera_spring_arm = _player.camera_arm
-	pivot = _player.get_node("RootNode")
+func init(args := {}) -> _State:
+	.init(args)
+	camera_spring_arm = args["player"].camera_arm
+	pivot = args["player"].get_node("RootNode")
 	return self
 
 func enter() -> void:

@@ -23,7 +23,8 @@ func init(_player) -> Fsm:
 		StateType.States.FALL: Fall.new()
 	}
 	for state in states:
-		var _state = states[state].init(_player, state)
+		var _state = states[state].init({"player": _player, \
+			"state_type": state, "fsm": self})
 		add_child(_state)
 		_state.connect("change_state", self, "change_state")
 		_player.anim.connect("animation_finished", states[state], "_on_player_anim_finished")

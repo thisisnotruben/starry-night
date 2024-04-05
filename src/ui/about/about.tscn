@@ -23,25 +23,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="panel" type="PanelContainer" parent="center"]
-margin_left = 348.0
-margin_top = 70.0
-margin_right = 676.0
-margin_bottom = 529.0
+margin_left = 350.0
+margin_top = 68.0
+margin_right = 674.0
+margin_bottom = 531.0
 
 [node name="margin" type="MarginContainer" parent="center/panel"]
 margin_left = 2.0
 margin_top = 2.0
-margin_right = 326.0
-margin_bottom = 457.0
+margin_right = 322.0
+margin_bottom = 461.0
 
 [node name="main" type="VBoxContainer" parent="center/panel/margin"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 316.0
-margin_bottom = 447.0
+margin_right = 312.0
+margin_bottom = 451.0
 
 [node name="label" type="Label" parent="center/panel/margin/main"]
-margin_right = 308.0
+margin_right = 304.0
 margin_bottom = 55.0
 text = "Licenses Attributions
 ----------------------"
@@ -50,7 +50,7 @@ valign = 1
 
 [node name="Label" type="Label" parent="center/panel/margin/main"]
 margin_top = 59.0
-margin_right = 308.0
+margin_right = 304.0
 margin_bottom = 375.0
 text = "Images:
     - maxparata
@@ -64,17 +64,18 @@ Audio:
     - Bleeoop
 	"
 
-[node name="license_redirect" type="LinkButton" parent="center/panel/margin/main"]
+[node name="license_redirect" type="Button" parent="center/panel/margin/main"]
 margin_top = 379.0
-margin_right = 308.0
-margin_bottom = 405.0
-text = "     License link redirect     "
-underline = 1
+margin_right = 304.0
+margin_bottom = 409.0
+focus_neighbour_top = NodePath("../back")
+text = "License link redirect"
 
 [node name="back" type="Button" parent="center/panel/margin/main"]
-margin_top = 409.0
-margin_right = 308.0
-margin_bottom = 439.0
+margin_top = 413.0
+margin_right = 304.0
+margin_bottom = 443.0
+focus_neighbour_bottom = NodePath("../license_redirect")
 size_flags_horizontal = 3
 text = "Back"
 

@@ -201,7 +201,6 @@ output_latency.web=150
 [autoload]
 
 Music="*res://src/music.tscn"
-Screenshot="res://addons/simple_screenshot_script/screenshot.tscn"
 
 [display]
 

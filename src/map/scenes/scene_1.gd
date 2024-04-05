@@ -36,8 +36,6 @@ func _on_game_finish(won: bool, fell: bool = false) -> void:
 		fsm.lock(true)
 		yield(get_tree().create_timer(2.0), "timeout")
 
-	connect("tree_exited", self, "set_scene")
 	queue_free()
-
-func set_scene() -> void:
+	yield(self, "tree_exited")
 	Music.get_tree().change_scene(scene_path)
